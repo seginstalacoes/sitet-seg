@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import MediaPh from '../../components/MediaPh.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+import { waLink } from '../../data/site.js';
+
+export async function getStaticPaths() {
+  const servicos = await getCollection('servicos');
+  return servicos.map(s => ({ params: { slug: s.id }, props: { s } }));
+}
+const { s } = Astro.props;
+const { Content } = await render(s);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: s.data.title,
+  provider: { '@type': 'HomeAndConstructionBusiness', name: 'SEG Instalações' },
+  areaServed: 'Sul da Bahia',
+  description: s.data.metaDescription
+};
+---
+<Base title={s.data.metaTitle} description={s.data.metaDescription} waMsg={s.data.waMsg} schema={schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow"><Icon name={s.data.icon} size={18} /> Serviços</span>
+      <h1>{s.data.h1}</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:48px">
+    <div class="wrap two-col">
+      <div class="prose"><Content /></div>
+      <aside>
+        <MediaPh label={s.data.fotoLabel} h={260} />
+        <div class="aside-cta">
+          <p><strong>Orçamento gratuito</strong> e resposta em até 1 dia útil.</p>
+          <a class="btn btn-primary" href="/orcamento" style="width:100%">Solicitar orçamento</a>
+          <a class="btn btn-ghost" href={waLink(s.data.waMsg)} rel="noopener" style="width:100%;margin-top:10px">Falar no WhatsApp</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <CtaBand waMsg={s.data.waMsg} />
+</Base>
+<style>
+.page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
+.page-hero h1 { color: #fff; max-width: 22ch; }
+.page-hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; }
+.two-col { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
+@media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
+aside { position: sticky; top: 90px; }
+.aside-cta { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; margin-top: 18px; }
+.aside-cta p { margin-bottom: 14px; color: var(--slate); }
+</style>

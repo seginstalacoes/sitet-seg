@@ -1,0 +1,14 @@
+---
+import { waLink } from '../data/site.js';
+const { titulo = 'Pronto para o seu projeto?', texto = 'Resposta em até 1 dia útil · visita técnica em Ilhéus, Itabuna, Itacaré, Barra Grande e região.', waMsg = 'Olá! Visitei o site da SEG Instalações e gostaria de solicitar um orçamento.' } = Astro.props;
+---
+<section class="cta-band">
+  <div class="wrap">
+    <h2>{titulo}</h2>
+    <p>{texto}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/orcamento">Solicitar orçamento</a>
+      <a class="btn btn-ghost-light" href={waLink(waMsg)} rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+import { SITE, waLink, WA_PADRAO } from '../data/site.js';
+---
+<footer class="ftr">
+  <div class="wrap grid grid-3">
+    <div>
+      <img src="/logos/seg-logo-negativa.svg" alt="SEG Instalações" width="188" height="62" style="height:62px;width:auto;margin-bottom:16px" />
+      <p>Automação e integração de sistemas no sul da Bahia.</p>
+      <p>CNPJ {SITE.cnpj}</p>
+      <p>{SITE.endereco}</p>
+    </div>
+    <div>
+      <p class="fh">Contato</p>
+      <p><a href={`tel:+557330175350`}>{SITE.foneFixo}</a> · <a href={waLink(WA_PADRAO)} rel="noopener">{SITE.foneMovel} (WhatsApp)</a></p>
+      <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+      <p><a href={SITE.instagram} rel="noopener">Instagram</a></p>
+      <p>Atendemos {SITE.cidades}.</p>
+    </div>
+    <div>
+      <p class="fh">Institucional</p>
+      <p><a href="/empresa">Empresa</a> · <a href="/como-trabalhamos">Como trabalhamos</a></p>
+      <p><a href="/servicos">Serviços</a> · <a href="/segmentos">Segmentos</a> · <a href="/blog">Blog</a></p>
+      <p><a href="/downloads">Downloads</a> · <a href="/loja">Loja</a></p>
+      <p><a href="/politica-de-privacidade">Privacidade e LGPD</a> · <a href="/termos-de-uso">Termos de uso</a></p>
+    </div>
+  </div>
+  <div class="wrap base">
+    <p>© {new Date().getFullYear()} SEG Instalações — {SITE.slogan}</p>
+  </div>
+</footer>
+<style>
+.ftr { background: var(--navy-deep); color: #C7D3E8; padding: 56px 0 0; font-size: .93rem; }
+.ftr a { color: #fff; text-decoration: none; }
+.ftr a:hover { color: var(--orange); }
+.ftr p { margin: 0 0 8px; }
+.fh { color: #fff; font-weight: 700; margin-bottom: 12px; font-size: 1rem; }
+.base { border-top: 1px solid rgba(255,255,255,.12); margin-top: 40px; padding-top: 18px; padding-bottom: 18px; }
+.base p { color: #8FA3C4; font-size: .85rem; }
+</style>

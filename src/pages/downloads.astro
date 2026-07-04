@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Downloads — Materiais SEG | SEG Instalações"
+  description="Baixe o portfólio B2B da SEG Instalações e conheça nossos projetos de automação, segurança eletrônica e redes no sul da Bahia.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Downloads</span><h1>Materiais SEG</h1></div></section>
+  <section class="section"><div class="wrap" style="max-width:720px">
+    <div class="card">
+      <h3>Portfólio B2B — SEG Instalações (PDF)</h3>
+      <p>Projetos, soluções e diferenciais da SEG para empresas, condomínios e construtoras.</p>
+      <!-- TODO: ligar este formulário ao mesmo endpoint do orçamento e liberar o link do PDF na resposta -->
+      <form action="https://api.web3forms.com/submit" method="POST" style="margin-top:16px">
+        <input type="hidden" name="access_key" value="bbc7faba-0ea7-41aa-abdf-18986c0d5cf2" />
+      <input type="hidden" name="redirect" value="https://seginstalacoes.com.br/obrigado" />
+      <input type="hidden" name="from_name" value="Site SEG Instalações" />
+        <input type="hidden" name="material" value="Portfolio B2B" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="field"><label for="dn">Nome*</label><input id="dn" name="nome" type="text" required /></div>
+        <div class="field"><label for="de">E-mail*</label><input id="de" name="email" type="email" required /></div>
+        <div class="field"><label for="ds">Segmento*</label>
+          <select id="ds" name="segmento" required>
+            <option value="">Selecione…</option>
+            <option>Residência</option><option>Condomínio</option><option>Empresa</option>
+            <option>Construtora / arquiteto</option><option>Órgão público</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit" style="border:none;cursor:pointer;font:inherit">Receber o portfólio</button>
+      </form>
+    </div>
+  </div></section>
+</Base>
+<style>.page-hero { background: var(--navy); color: #fff; padding: 56px 0; } .page-hero h1 { color: #fff; }</style>

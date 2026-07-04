@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE } from '../data/site.js';
+const faqs = [
+  ['Quanto custa um projeto de automação?', 'Depende dos ambientes e sistemas envolvidos. Projetos modulares começam pelo essencial e crescem por etapas — e o orçamento é gratuito.'],
+  ['Vocês atendem quais cidades?', `${SITE.cidades} — e projetos fora da região mediante consulta.`],
+  ['O orçamento é pago?', 'Não. O levantamento inicial e a proposta são gratuitos e sem compromisso.'],
+  ['Trabalham com quais marcas?', 'Somos parceiros Intelbras e Hikvision e trabalhamos com plataformas de automação consolidadas no mercado, sempre com equipamentos homologados e garantia de fábrica.'],
+  ['Casa pronta pode ser automatizada?', 'Sim. Usamos tecnologias sem fio confiáveis que dispensam quebra de acabamento. Em obra nova, o ideal é nos chamar antes de fechar o gesso.'],
+  ['Vocês dão garantia?', 'Os equipamentos têm garantia de fábrica e os serviços têm garantia SEG, especificada em cada proposta.'],
+  ['Fazem manutenção de sistemas que não instalaram?', 'Sim, após uma avaliação técnica do que está instalado.'],
+  ['Quanto tempo dura uma instalação?', 'Varia com o escopo: projetos residenciais simples levam poucos dias; projetos completos seguem cronograma definido na proposta.'],
+  ['Preciso trocar tudo o que já tenho?', 'Não necessariamente. Sempre que viável, integramos os sistemas existentes ao novo projeto.'],
+  ['Como funciona o contrato de manutenção?', 'Inspeções preventivas de rotina, prioridade de atendimento e custo mensal previsível — indicado principalmente para condomínios e empresas.']
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }))
+};
+---
+<Base title="Perguntas Frequentes | SEG Instalações"
+  description="Tire suas dúvidas sobre automação, CFTV, garantias, cidades atendidas, prazos e contrato de manutenção da SEG Instalações." schema={schema}>
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">FAQ</span><h1>Perguntas frequentes</h1></div></section>
+  <section class="section"><div class="wrap" style="max-width:820px">
+    {faqs.map(([q, a]) => (<details><summary>{q}</summary><p>{a}</p></details>))}
+  </div></section>
+  <CtaBand titulo="Não achou sua resposta?" texto="Fale direto com a gente — respondemos rápido." />
+</Base>
+<style>.page-hero { background: var(--navy); color: #fff; padding: 56px 0; } .page-hero h1 { color: #fff; }</style>

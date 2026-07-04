@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { waLink } from '../data/site.js';
+const interesses = ['Automação', 'CFTV / câmeras', 'Controle de acesso', 'Alarme', 'Som ambiente', 'Redes / Wi-Fi', 'Interfonia', 'Detecção de incêndio (SDAI)', 'Integração de sistemas'];
+---
+<Base title="Solicite um Orçamento | SEG Instalações"
+  description="Conte o que você precisa e receba uma proposta da SEG Instalações em até 1 dia útil. Orçamento gratuito para Ilhéus, Itabuna, Itacaré, Barra Grande e região."
+  waMsg="Olá! Visitei o site da SEG Instalações e gostaria de solicitar um orçamento.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Orçamento</span>
+    <h1>Conte o que você precisa. A gente projeta a solução.</h1>
+    <p class="lead" style="color:#C7D3E8;margin-top:12px">Orçamento gratuito · resposta em até 1 dia útil.</p></div></section>
+  <section class="section"><div class="wrap form-grid">
+    <!-- TODO: substituir FORM_ENDPOINT pelo endpoint real (Web3Forms/Formspree) antes de publicar -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="bbc7faba-0ea7-41aa-abdf-18986c0d5cf2" />
+      <input type="hidden" name="redirect" value="https://seginstalacoes.com.br/obrigado" />
+      <input type="hidden" name="from_name" value="Site SEG Instalações" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="field"><label for="nome">Nome*</label><input id="nome" name="nome" type="text" required /></div>
+      <div class="field"><label for="whats">WhatsApp*</label><input id="whats" name="whatsapp" type="tel" required placeholder="(73) 9...." /></div>
+      <div class="field"><label for="email">E-mail*</label><input id="email" name="email" type="email" required /></div>
+      <div class="field"><label for="cidade">Cidade*</label><input id="cidade" name="cidade" type="text" required /></div>
+      <div class="field"><label for="perfil">Você é:*</label>
+        <select id="perfil" name="perfil" required>
+          <option value="">Selecione…</option>
+          <option>Residência</option>
+          <option>Condomínio (síndico/administradora)</option>
+          <option>Empresa / comércio</option>
+          <option>Construtora / arquiteto</option>
+          <option>Órgão público</option>
+        </select>
+      </div>
+      <div class="field"><span style="display:block;font-weight:700;color:var(--navy);margin-bottom:8px">Interesse (marque quantos quiser):</span>
+        <div class="checks">
+          {interesses.map(i => (<label><input type="checkbox" name="interesse" value={i} /> {i}</label>))}
+        </div>
+      </div>
+      <div class="field"><label for="momento">Momento do projeto:</label>
+        <select id="momento" name="momento">
+          <option>Imóvel pronto</option>
+          <option>Obra em projeto</option>
+          <option>Obra em execução</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">Conte um pouco do que precisa:</label><textarea id="msg" name="mensagem" rows="5"></textarea></div>
+      <button class="btn btn-primary" type="submit" style="border:none;cursor:pointer;font:inherit">Enviar solicitação</button>
+    </form>
+    <aside class="aside-cta">
+      <h2 style="font-size:1.2rem;margin-bottom:10px">Prefere WhatsApp?</h2>
+      <p style="color:var(--slate);margin-bottom:16px">Fale direto com a nossa equipe e receba atendimento imediato em horário comercial.</p>
+      <a class="btn btn-navy" href={waLink('Olá! Gostaria de solicitar um orçamento com a SEG.')} rel="noopener" style="width:100%">Chamar no WhatsApp</a>
+      <p style="color:var(--slate);margin-top:20px;font-size:.9rem">Seus dados são usados apenas para responder à sua solicitação, conforme nossa <a href="/politica-de-privacidade">política de privacidade</a>.</p>
+    </aside>
+  </div></section>
+</Base>
+<style>
+.page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
+.page-hero h1 { color: #fff; max-width: 24ch; }
+.form-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
+@media (max-width: 880px) { .form-grid { grid-template-columns: 1fr; } }
+.aside-cta { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: sticky; top: 90px; }
+</style>

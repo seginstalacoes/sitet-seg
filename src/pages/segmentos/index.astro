@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+const segmentos = (await getCollection('segmentos')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Segmentos Atendidos — Residências, Condomínios, Empresas e Construtoras | SEG Instalações"
+  description="Soluções de automação, segurança e redes para residências, condomínios, empresas, construtoras, arquitetos e órgãos públicos no sul da Bahia.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Segmentos</span><h1>Cada perfil, uma solução</h1></div></section>
+  <section class="section"><div class="wrap grid grid-3">
+    {segmentos.map(s => (<a class="card" href={`/segmentos/${s.id}`}><div class="ico"><Icon name={s.data.icon} /></div><h3>{s.data.title}</h3><p>{s.data.resumo}</p></a>))}
+  </div></section>
+  <CtaBand />
+</Base>
+<style>.page-hero { background: var(--navy); color: #fff; padding: 56px 0; } .page-hero h1 { color: #fff; }</style>

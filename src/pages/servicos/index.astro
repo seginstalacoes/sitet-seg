@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+const servicos = (await getCollection('servicos')).sort((a, b) => a.data.order - b.data.order);
+const destaque = servicos.filter(s => s.data.destaque);
+const integraveis = servicos.filter(s => !s.data.destaque);
+---
+<Base title="Serviços — Automação, Segurança Eletrônica e Redes | SEG Instalações"
+  description="Automação residencial e predial, integração de sistemas, CFTV, controle de acesso, alarmes, sonorização, redes e detecção de incêndio em Ilhéus e região.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Serviços</span><h1>Soluções que funcionam juntas</h1>
+  <p class="lead" style="color:#C7D3E8;margin-top:12px">Cada sistema abaixo funciona sozinho — mas o valor de verdade aparece quando eles trabalham integrados.</p></div></section>
+  <section class="section"><div class="wrap">
+    <div class="sec-banner"><span class="num">01</span><h2>Automação e integração</h2></div>
+    <div class="grid grid-3">
+      {destaque.map(s => (<a class="card destaque" href={`/servicos/${s.id}`}><div class="ico"><Icon name={s.data.icon} /></div><h3>{s.data.title}</h3><p>{s.data.resumo}</p></a>))}
+    </div>
+    <div class="sec-banner" style="margin-top:52px"><span class="num">02</span><h2>Sistemas integráveis</h2></div>
+    <div class="grid grid-3">
+      {integraveis.map(s => (<a class="card" href={`/servicos/${s.id}`}><div class="ico"><Icon name={s.data.icon} /></div><h3>{s.data.title}</h3><p>{s.data.resumo}</p></a>))}
+    </div>
+  </div></section>
+  <CtaBand />
+</Base>
+<style>
+.page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
+.page-hero h1 { color: #fff; }
+.card.destaque { border-top: 4px solid var(--orange); }
+</style>

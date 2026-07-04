@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Loja SEG — Em Breve | SEG Instalações"
+  description="A loja online da SEG Instalações está em construção: equipamentos homologados com curadoria técnica. Deixe seu e-mail para ser avisado do lançamento.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Loja online</span><h1>Loja SEG — em breve</h1></div></section>
+  <section class="section"><div class="wrap" style="max-width:680px;text-align:center">
+    <p class="lead" style="margin:0 auto 26px">Estamos preparando uma loja com equipamentos homologados e curadoria técnica SEG. Deixe seu e-mail para ser avisado do lançamento.</p>
+    <form action="https://api.web3forms.com/submit" method="POST" style="display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center">
+      <input type="hidden" name="access_key" value="bbc7faba-0ea7-41aa-abdf-18986c0d5cf2" />
+      <input type="hidden" name="redirect" value="https://seginstalacoes.com.br/obrigado" />
+      <input type="hidden" name="from_name" value="Site SEG Instalações" />
+      <input type="hidden" name="material" value="Aviso loja" />
+      <input name="email" type="email" required placeholder="seu@email.com" style="flex:1;min-width:240px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit" aria-label="Seu e-mail" />
+      <button class="btn btn-primary" type="submit" style="border:none;cursor:pointer;font:inherit">Quero ser avisado</button>
+    </form>
+  </div></section>
+</Base>
+<style>.page-hero { background: var(--navy); color: #fff; padding: 56px 0; } .page-hero h1 { color: #fff; }</style>

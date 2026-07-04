@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+const etapas = [
+  ['Levantamento técnico', 'Visita ao local, análise da infraestrutura existente e entendimento da rotina de quem vai usar o sistema.'],
+  ['Projeto', 'Dimensionamento dos equipamentos, definição de infraestrutura e proposta com escopo detalhado: você sabe exatamente o que vai receber, item a item.'],
+  ['Instalação', 'Infraestrutura, lançamento de cabos e montagem com equipe própria, acabamento limpo e cronograma acordado.'],
+  ['Configuração', 'Programação dos sistemas, integração entre plataformas e ajuste fino de cenas e automações.'],
+  ['Testes', 'Verificação ponto a ponto e certificação do que foi instalado.'],
+  ['Entrega e treinamento', 'Apresentação do sistema funcionando e treinamento de quem vai operar, com documentação de entrega.'],
+  ['Manutenção', 'Planos de manutenção preventiva e suporte contínuo, para o sistema valer pelo que custou por muitos anos.']
+];
+---
+<Base title="Como Trabalhamos — Método SEG em 7 Etapas | SEG Instalações"
+  description="Do levantamento técnico à manutenção: conheça o método de entrega em 7 etapas que garante projetos de automação e segurança que funcionam anos depois da instalação."
+  waMsg="Olá! Quero agendar um levantamento técnico com a SEG.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Método SEG</span>
+    <h1>Um método de engenharia, do levantamento à manutenção</h1>
+    <p class="lead" style="color:#C7D3E8;margin-top:12px">Tecnologia mal instalada vira dor de cabeça cara. Por isso, todo projeto SEG segue o mesmo processo — o mesmo rigor para uma residência ou para um órgão público.</p>
+  </div></section>
+  <section class="section"><div class="wrap">
+    <ol class="metodo">
+      {etapas.map(([t, d], i) => (
+        <li>
+          <span class="m-num">{String(i + 1).padStart(2, '0')}</span>
+          <div><h2 style="font-size:1.25rem;margin-bottom:6px">{t}</h2><p style="color:var(--slate);max-width:70ch">{d}</p></div>
+        </li>
+      ))}
+    </ol>
+  </div></section>
+  <CtaBand titulo="Comece pela etapa 01" texto="Agende um levantamento técnico sem compromisso." waMsg="Olá! Quero agendar um levantamento técnico com a SEG." />
+</Base>
+<style>
+.page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
+.page-hero h1 { color: #fff; max-width: 26ch; }
+.metodo { list-style: none; display: grid; gap: 14px; }
+.metodo li { display: flex; gap: 20px; align-items: flex-start; padding: 22px; border-radius: var(--radius); }
+.metodo li:nth-child(odd) { background: var(--mist); }
+.m-num { background: var(--navy); color: var(--orange); font-weight: 700; padding: 8px 13px; border-radius: 6px; flex-shrink: 0; }
+</style>

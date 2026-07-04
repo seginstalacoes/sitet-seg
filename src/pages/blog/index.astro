@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBand from '../../components/CtaBand.astro';
+const emBreve = [
+  'Quanto custa automatizar uma casa? Guia realista de investimento',
+  'Automação para casa de praia: gerencie sua segunda residência à distância',
+  'Portaria remota em condomínios: quanto custa e quanto economiza',
+  'Automação em obra nova: o que definir antes de fechar o gesso',
+  'O que é integração de sistemas (e por que seus equipamentos deviam conversar)'
+];
+---
+<Base title="Blog SEG — Automação, Segurança e Tecnologia | SEG Instalações"
+  description="Conteúdo sobre automação residencial, segurança eletrônica, redes e tecnologia para condomínios e empresas no sul da Bahia.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Blog</span><h1>Conteúdo SEG</h1></div></section>
+  <section class="section"><div class="wrap" style="max-width:780px">
+    <p class="lead">Os primeiros artigos estão em produção. Por aqui, em breve:</p>
+    <ul class="zebra" style="margin-top:22px">
+      {emBreve.map(t => (<li>{t}</li>))}
+    </ul>
+  </div></section>
+  <CtaBand titulo="Enquanto isso, fale com a gente" texto="Sua dúvida pode virar o próximo artigo — e a sua solução não precisa esperar." />
+</Base>
+<style>.page-hero { background: var(--navy); color: #fff; padding: 56px 0; } .page-hero h1 { color: #fff; }</style>

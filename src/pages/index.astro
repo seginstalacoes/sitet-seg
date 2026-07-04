@@ -1,0 +1,186 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import MediaPh from '../components/MediaPh.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+import { waLink, WA_PADRAO, SITE } from '../data/site.js';
+
+const servicos = (await getCollection('servicos')).sort((a, b) => a.data.order - b.data.order);
+const destaque = servicos.filter(s => s.data.destaque);
+const integraveis = servicos.filter(s => !s.data.destaque);
+const segmentos = (await getCollection('segmentos')).sort((a, b) => a.data.order - b.data.order);
+
+const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuração', 'Testes', 'Entrega e treinamento', 'Manutenção'];
+---
+<Base
+  title="Automação Residencial e Integração de Sistemas em Ilhéus e Sul da Bahia | SEG Instalações"
+  description="Automação residencial, CFTV, controle de acesso, redes e som ambiente funcionando como um só sistema. Projeto com responsabilidade técnica de engenharia. Peça um orçamento."
+  waMsg={WA_PADRAO}
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Integração de tecnologia e segurança eletrônica</span>
+        <h1>Tudo conectado<span class="dot">.</span><br />Tudo sob controle<span class="dot">.</span></h1>
+        <p class="lead">
+          Automação residencial e integração de sistemas no sul da Bahia. Iluminação, segurança,
+          som, acesso e redes funcionando como um só sistema — com projeto e responsabilidade
+          técnica de engenharia.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/orcamento">Solicitar orçamento</a>
+          <a class="btn btn-ghost-light" href={waLink(WA_PADRAO)} rel="noopener">Falar no WhatsApp</a>
+        </div>
+      </div>
+      <MediaPh label="FOTO/VÍDEO: projeto real da SEG — ambiente automatizado" h={340} />
+    </div>
+  </section>
+
+  <!-- INDICADORES -->
+  <section class="section" style="padding-top:44px;padding-bottom:44px">
+    <div class="wrap stats">
+      <div class="stat"><b>+10 anos</b><span>de mercado</span></div>
+      <div class="stat"><b>+600</b><span>projetos executados</span></div>
+      <div class="stat"><b>+3.000</b><span>câmeras instaladas</span></div>
+      <div class="stat"><b>Engenharia</b><span>direção técnica</span></div>
+    </div>
+  </section>
+
+  <!-- O QUE FAZEMOS -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">01</span><h2>Sua casa e sua empresa, funcionando como um só sistema</h2></div>
+      <p class="lead">
+        A SEG Instalações é uma integradora de tecnologia. Projetamos, instalamos e configuramos
+        automação, segurança eletrônica, redes e áudio — e fazemos tudo isso conversar em uma única
+        plataforma, no seu celular.
+      </p>
+      <p class="lead" style="margin-top:14px">
+        Quem já instalou mais de 3.000 câmeras conhece infraestrutura como poucos. É essa base que
+        sustenta nossos projetos de automação: cabeamento certo, rede estável e sistemas que
+        continuam funcionando anos depois da entrega.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOLUÇÕES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">02</span><h2>Soluções</h2></div>
+      <div class="grid grid-3">
+        {destaque.map(s => (
+          <a class="card destaque" href={`/servicos/${s.id}`}>
+            <div class="ico"><Icon name={s.data.icon} /></div>
+            <h3>{s.data.title}</h3>
+            <p>{s.data.resumo}</p>
+          </a>
+        ))}
+      </div>
+      <p class="sub-label">Sistemas integráveis</p>
+      <div class="grid grid-4">
+        {integraveis.map(s => (
+          <a class="card" href={`/servicos/${s.id}`}>
+            <div class="ico"><Icon name={s.data.icon} size={26} /></div>
+            <h3 style="font-size:1.02rem">{s.data.title}</h3>
+            <p style="font-size:.9rem">{s.data.resumo}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTOS -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">03</span><h2>Soluções para cada perfil</h2></div>
+      <div class="grid grid-3">
+        {segmentos.map(s => (
+          <a class="card" href={`/segmentos/${s.id}`}>
+            <div class="ico"><Icon name={s.data.icon} /></div>
+            <h3>{s.data.title}</h3>
+            <p>{s.data.resumo}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">04</span><h2>Como trabalhamos</h2></div>
+      <ol class="etapas">
+        {etapas.map((e, i) => (
+          <li><span class="et-num">{String(i + 1).padStart(2, '0')}</span>{e}</li>
+        ))}
+      </ol>
+      <p style="margin-top:22px"><a class="btn btn-ghost" href="/como-trabalhamos">Conheça o método SEG</a></p>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">05</span><h2>Projetos em destaque</h2></div>
+      <div class="grid grid-3">
+        <MediaPh label="FOTO: case 1 — projeto empresarial (ex.: CFTV corporativo)" h={220} />
+        <MediaPh label="FOTO: case 2 — condomínio (acesso + interfonia + CFTV)" h={220} />
+        <MediaPh label="FOTO: case 3 — residência automatizada" h={220} />
+      </div>
+      <div class="grid grid-3" style="margin-top:26px">
+        <blockquote class="depo">"[DEPOIMENTO 1 — coletar com cliente empresarial]"<footer>— Cliente, Empresa</footer></blockquote>
+        <blockquote class="depo">"[DEPOIMENTO 2 — coletar com síndico]"<footer>— Síndico, Condomínio</footer></blockquote>
+        <blockquote class="depo">"[DEPOIMENTO 3 — coletar com cliente residencial]"<footer>— Cliente residencial</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCEIROS -->
+  <section class="section" style="padding-top:48px;padding-bottom:48px">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">06</span><h2>Parceiros e marcas</h2></div>
+      <div class="marcas">
+        <span>[LOGO Intelbras]</span>
+        <span>[LOGO Hikvision]</span>
+        <span>[LOGO parceiro 3]</span>
+        <span>[LOGO parceiro 4]</span>
+      </div>
+      <p style="color:var(--slate)">Equipamentos homologados, com garantia de fábrica e suporte oficial.</p>
+    </div>
+  </section>
+
+  <!-- FAQ RESUMIDA -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">07</span><h2>Perguntas frequentes</h2></div>
+      <details><summary>Quanto custa um projeto de automação?</summary><p>Depende dos ambientes e sistemas envolvidos. Projetos modulares começam pelo essencial e crescem por etapas — e o orçamento é gratuito.</p></details>
+      <details><summary>Vocês atendem quais cidades?</summary><p>{SITE.cidades} — e projetos fora da região mediante consulta.</p></details>
+      <details><summary>Casa pronta pode ser automatizada?</summary><p>Sim. Usamos tecnologias sem fio confiáveis que dispensam quebra de acabamento.</p></details>
+      <details><summary>Vocês dão garantia?</summary><p>Equipamentos têm garantia de fábrica (trabalhamos com marcas homologadas) e os serviços têm garantia SEG.</p></details>
+      <p style="margin-top:16px"><a href="/perguntas-frequentes">Ver todas as perguntas →</a></p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<style>
+.hero { background: linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff; padding: 84px 0; }
+.hero h1 { color: #fff; margin: 0 0 18px; }
+.hero .dot { color: var(--orange); }
+.hero .lead { color: #C7D3E8; margin-bottom: 30px; }
+.hero .eyebrow { color: var(--orange); }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: center; }
+@media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding: 56px 0; } }
+.card.destaque { border-top: 4px solid var(--orange); }
+.sub-label { color: var(--orange); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 34px 0 14px; }
+.etapas { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; counter-reset: none; }
+.etapas li { background: var(--mist); border-radius: 8px; padding: 16px 14px; font-weight: 700; color: var(--navy); font-size: .92rem; }
+.et-num { display: block; color: var(--orange); font-size: .85rem; margin-bottom: 6px; }
+.depo { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: var(--radius); padding: 20px; color: var(--slate); font-size: .95rem; }
+.depo footer { margin-top: 10px; font-weight: 700; color: var(--navy); font-style: normal; }
+.marcas { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
+.marcas span { border: 2px dashed var(--line); border-radius: 8px; padding: 18px 28px; color: var(--slate); background: var(--mist); font-size: .9rem; }
+</style>

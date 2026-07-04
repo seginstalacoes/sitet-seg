@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { waLink } from '../data/site.js';
+---
+<Base title="Solicitação Enviada | SEG Instalações"
+  description="Recebemos sua solicitação. A equipe SEG retorna em até 1 dia útil.">
+  <section class="section" style="text-align:center;padding:110px 0">
+    <div class="wrap" style="max-width:640px">
+      <h1>Recebemos sua solicitação ✓</h1>
+      <p class="lead" style="margin:16px auto 30px">Obrigado pelo contato! Nossa equipe vai analisar o que você enviou e retorna <strong>em até 1 dia útil</strong>. Se preferir agilizar, chama a gente no WhatsApp.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href={waLink('Olá! Acabei de enviar uma solicitação pelo site da SEG.')} rel="noopener">Falar no WhatsApp</a>
+        <a class="btn btn-ghost" href="/">Voltar à Home</a>
+      </div>
+    </div>
+  </section>
+</Base>
