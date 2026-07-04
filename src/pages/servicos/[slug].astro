@@ -33,7 +33,9 @@ const schema = {
     <div class="wrap two-col">
       <div class="prose"><Content /></div>
       <aside>
-        <MediaPh label={s.data.fotoLabel} h={260} />
+        {s.data.foto
+          ? <img class="foto-servico" src={s.data.foto} alt={s.data.fotoLabel} loading="lazy" />
+          : <MediaPh label={s.data.fotoLabel} h={260} />}
         <div class="aside-cta">
           <p><strong>Orçamento gratuito</strong> e resposta em até 1 dia útil.</p>
           <a class="btn btn-primary" href="/orcamento" style="width:100%">Solicitar orçamento</a>
@@ -51,6 +53,7 @@ const schema = {
 .two-col { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
 @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
 aside { position: sticky; top: 90px; }
+.foto-servico { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius); }
 .aside-cta { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; margin-top: 18px; }
 .aside-cta p { margin-bottom: 14px; color: var(--slate); }
 </style>

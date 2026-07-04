@@ -34,7 +34,7 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
           <a class="btn btn-ghost-light" href={waLink(WA_PADRAO)} rel="noopener">Falar no WhatsApp</a>
         </div>
       </div>
-      <MediaPh label="FOTO/VÍDEO: projeto real da SEG — ambiente automatizado" h={340} />
+      <img class="hero-foto" src="/fotos/08_iluminacao_cortinas_pendente.webp" alt="Ambiente residencial com iluminação e cortinas automatizadas — projeto SEG" fetchpriority="high" />
     </div>
   </section>
 
@@ -125,9 +125,9 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
     <div class="wrap">
       <div class="sec-banner"><span class="num">05</span><h2>Projetos em destaque</h2></div>
       <div class="grid grid-3">
-        <MediaPh label="FOTO: case 1 — projeto empresarial (ex.: CFTV corporativo)" h={220} />
-        <MediaPh label="FOTO: case 2 — condomínio (acesso + interfonia + CFTV)" h={220} />
-        <MediaPh label="FOTO: case 3 — residência automatizada" h={220} />
+        <img class="case-foto" src="/fotos/02_cftv_camera_orla.webp" alt="Videomonitoramento com vista para a orla — projeto SEG" loading="lazy" />
+        <img class="case-foto" src="/fotos/01_cftv_camera_hikvision.webp" alt="Câmera de segurança em instalação SEG" loading="lazy" />
+        <img class="case-foto" src="/fotos/06_automacao_painel_parede.webp" alt="Painel de automação residencial — projeto SEG" loading="lazy" />
       </div>
       <div class="grid grid-3" style="margin-top:26px">
         <blockquote class="depo">"[DEPOIMENTO 1 — coletar com cliente empresarial]"<footer>— Cliente, Empresa</footer></blockquote>
@@ -175,6 +175,8 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .hero .lead { color: #C7D3E8; margin-bottom: 30px; }
 .hero .eyebrow { color: var(--orange); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: center; }
+.hero-foto { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.case-foto { width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius); }
 @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding: 56px 0; } }
 .card.destaque { border-top: 4px solid var(--orange); }
 .sub-label { color: var(--orange); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 34px 0 14px; }

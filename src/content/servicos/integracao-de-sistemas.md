@@ -8,7 +8,8 @@ icon: "link"
 destaque: true
 order: 3
 waMsg: "Olá! Tenho sistemas instalados e gostaria de integrá-los em uma plataforma única."
-fotoLabel: "FOTO: central técnica/rack organizado + app de integração"
+fotoLabel: "Interface de automação integrada em projeto SEG"
+foto: "/fotos/05_automacao_interface.webp"
 ---
 A maioria dos imóveis acumula sistemas isolados: um aplicativo para as câmeras, um controle para o portão, um alarme que ninguém sabe operar, um som que só funciona na sala. Integrar é fazer esses sistemas trabalharem juntos, em uma plataforma única — e essa é a especialidade da SEG.
 

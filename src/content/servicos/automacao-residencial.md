@@ -8,7 +8,8 @@ icon: "home"
 destaque: true
 order: 1
 waMsg: "Olá! Gostaria de conhecer melhor as soluções de automação residencial."
-fotoLabel: "FOTO: ambiente residencial automatizado (sala com cenas de iluminação)"
+fotoLabel: "Painel de automação instalado pela SEG"
+foto: "/fotos/06_automacao_painel_parede.webp"
 ---
 Imagine chegar em casa e, com um toque, o portão abre, as luzes da entrada acendem, o ar-condicionado já deixou a sala na temperatura certa e a sua playlist começa a tocar. Ao sair, um comando "Saída" apaga tudo, arma o alarme e tranca as portas. Isso não é casa do futuro — é o que a SEG entrega hoje no sul da Bahia.
 

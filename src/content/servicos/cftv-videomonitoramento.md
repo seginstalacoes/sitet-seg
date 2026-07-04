@@ -8,7 +8,8 @@ icon: "camera"
 destaque: false
 order: 4
 waMsg: "Olá! Visitei o site da SEG e gostaria de um orçamento para câmeras/CFTV."
-fotoLabel: "FOTO: instalação de CFTV da SEG (câmeras + monitoramento)"
+fotoLabel: "Câmera de segurança instalada pela SEG"
+foto: "/fotos/01_cftv_camera_hikvision.webp"
 ---
 Videomonitoramento profissional para residências, comércios, condomínios e indústrias: câmeras IP e HD, gravação local e em nuvem, visualização pelo celular e recursos inteligentes — detecção de pessoas, leitura de placas, visão noturna colorida. Equipamentos homologados Intelbras e Hikvision, com garantia de fábrica.
 

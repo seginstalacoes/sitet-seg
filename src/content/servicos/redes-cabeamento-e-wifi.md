@@ -8,7 +8,8 @@ icon: "network"
 destaque: false
 order: 8
 waMsg: "Olá! Gostaria de um orçamento para rede/cabeamento estruturado."
-fotoLabel: "FOTO: rack organizado e identificado por instalação SEG"
+fotoLabel: "Rack de rede organizado em instalação SEG"
+foto: "/fotos/04_infra_rack_rede.webp"
 ---
 Automação, câmeras, telefonia e trabalho remoto dependem de uma coisa só: rede estável. A SEG projeta e executa cabeamento estruturado com certificação ponto a ponto, racks organizados e identificados, fibra óptica e Wi-Fi profissional com cobertura dimensionada — sem área morta e sem roteador doméstico sofrendo.
 

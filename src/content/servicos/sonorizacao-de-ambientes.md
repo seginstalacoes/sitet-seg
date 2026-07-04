@@ -8,7 +8,8 @@ icon: "volume"
 destaque: false
 order: 7
 waMsg: "Olá! Gostaria de um orçamento para sonorização de ambientes."
-fotoLabel: "FOTO: ambiente com caixas embutidas instaladas pela SEG"
+fotoLabel: "Caixa de som instalada pela SEG"
+foto: "/fotos/07_sonorizacao_caixa_jbl.webp"
 ---
 Caixas embutidas com acabamento limpo, volume por ambiente e fontes de streaming integradas. Para residências, é conforto: multiroom controlado pelo aplicativo ou por voz. Para negócios — lojas, restaurantes, clínicas, academias, hotéis — é experiência do cliente: o ambiente certo faz as pessoas ficarem mais.
 

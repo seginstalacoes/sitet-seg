@@ -13,7 +13,8 @@ const servicos = defineCollection({
     destaque: z.boolean().default(false),
     order: z.number(),
     waMsg: z.string(),
-    fotoLabel: z.string().default('FOTO: projeto real da SEG')
+    fotoLabel: z.string().default('FOTO: projeto real da SEG'),
+    foto: z.string().optional()
   })
 });
 
