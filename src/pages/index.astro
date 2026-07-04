@@ -142,10 +142,12 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
     <div class="wrap">
       <div class="sec-banner"><span class="num">06</span><h2>Parceiros e marcas</h2></div>
       <div class="marcas">
-        <span>[LOGO Intelbras]</span>
-        <span>[LOGO Hikvision]</span>
-        <span>[LOGO parceiro 3]</span>
-        <span>[LOGO parceiro 4]</span>
+        <img src="/logos/parceiros/intelbras.png" alt="Intelbras" loading="lazy" />
+        <img src="/logos/parceiros/hikvision.png" alt="Hikvision" loading="lazy" />
+        <img src="/logos/parceiros/ambiente-g3.png" alt="Ambiente G3 — Cortinas Motorizadas" loading="lazy" />
+        <img src="/logos/parceiros/quero-automacao.png" alt="Quero Automação" loading="lazy" />
+        <img src="/logos/parceiros/frahm.png" alt="Frahm" loading="lazy" />
+        <img src="/logos/parceiros/ubiquiti.png" alt="Ubiquiti Networks" loading="lazy" />
       </div>
       <p style="color:var(--slate)">Equipamentos homologados, com garantia de fábrica e suporte oficial.</p>
     </div>
@@ -181,6 +183,7 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .et-num { display: block; color: var(--orange); font-size: .85rem; margin-bottom: 6px; }
 .depo { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: var(--radius); padding: 20px; color: var(--slate); font-size: .95rem; }
 .depo footer { margin-top: 10px; font-weight: 700; color: var(--navy); font-style: normal; }
-.marcas { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
-.marcas span { border: 2px dashed var(--line); border-radius: 8px; padding: 18px 28px; color: var(--slate); background: var(--mist); font-size: .9rem; }
+.marcas { display: flex; gap: 40px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+.marcas img { height: 38px; width: auto; }
+@media (max-width: 720px) { .marcas { gap: 24px; } .marcas img { height: 30px; } }
 </style>

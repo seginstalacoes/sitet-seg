@@ -21,12 +21,19 @@ import CtaBand from '../components/CtaBand.astro';
         <li><strong>Visão</strong> — Ser a referência em automação e integração de sistemas no sul da Bahia.</li>
         <li><strong>Valores</strong> — Responsabilidade técnica · Transparência · Entrega completa, do projeto ao treinamento · Relacionamento de longo prazo.</li>
       </ul>
-      <h2>Parcerias oficiais</h2>
-      <p>Trabalhamos com Intelbras e Hikvision, com equipamentos homologados e garantia de fábrica.</p>
+      <h2>Parcerias e marcas homologadas</h2>
+      <p>Não instalamos qualquer equipamento. Cada marca que entra em um projeto SEG passou por critério técnico: desempenho comprovado, garantia de fábrica, peças e suporte disponíveis no Brasil. É o que garante que o sistema entregue hoje continue funcionando — e com quem responder por ele — pelos próximos anos.</p>
     </div>
     <aside>
       <MediaPh label="FOTO: Danilo em obra/projeto" h={300} />
-      <div style="margin-top:18px"><MediaPh label="LOGOS: Intelbras · Hikvision" h={120} /></div>
+      <div class="logos-parc">
+        <img src="/logos/parceiros/intelbras.png" alt="Intelbras" loading="lazy" />
+        <img src="/logos/parceiros/hikvision.png" alt="Hikvision" loading="lazy" />
+        <img src="/logos/parceiros/ambiente-g3.png" alt="Ambiente G3 — Cortinas Motorizadas" loading="lazy" />
+        <img src="/logos/parceiros/quero-automacao.png" alt="Quero Automação" loading="lazy" />
+        <img src="/logos/parceiros/frahm.png" alt="Frahm" loading="lazy" />
+        <img src="/logos/parceiros/ubiquiti.png" alt="Ubiquiti Networks" loading="lazy" />
+      </div>
     </aside>
   </div></section>
   <CtaBand titulo="Quer conhecer nosso método de trabalho?" texto="Do levantamento técnico à manutenção — o mesmo rigor em todo projeto." />
@@ -36,4 +43,6 @@ import CtaBand from '../components/CtaBand.astro';
 .page-hero h1 { color: #fff; max-width: 26ch; }
 .two-col { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
 @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
+.logos-parc { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.logos-parc img { height: 34px; width: auto; }
 </style>
