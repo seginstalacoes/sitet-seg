@@ -40,12 +40,32 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 
   <!-- INDICADORES -->
   <section class="section" style="padding-top:44px;padding-bottom:44px">
-    <div class="wrap stats">
-      <div class="stat"><b>+10 anos</b><span>de mercado</span></div>
-      <div class="stat"><b>+600</b><span>projetos executados</span></div>
-      <div class="stat"><b>+3.000</b><span>câmeras instaladas</span></div>
+    <div class="wrap stats" id="stats">
+      <div class="stat"><b>+<span class="count" data-alvo="10">0</span> anos</b><span>de mercado</span></div>
+      <div class="stat"><b>+<span class="count" data-alvo="600">0</span></b><span>projetos executados</span></div>
+      <div class="stat"><b>+<span class="count" data-alvo="3000" data-fmt="mil">0</span></b><span>câmeras instaladas</span></div>
       <div class="stat"><b>Engenharia</b><span>direção técnica</span></div>
     </div>
+    <script>
+      const mReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const fmt = (n, f) => f === 'mil' ? n.toLocaleString('pt-BR') : String(n);
+      const els = document.querySelectorAll('.count');
+      if (mReduce) { els.forEach(e => e.textContent = fmt(+e.dataset.alvo, e.dataset.fmt)); }
+      else {
+        const io = new IntersectionObserver((ents) => ents.forEach(ent => {
+          if (!ent.isIntersecting) return;
+          io.unobserve(ent.target);
+          const alvo = +ent.target.dataset.alvo, f = ent.target.dataset.fmt, t0 = performance.now();
+          const tick = (t) => {
+            const p = Math.min((t - t0) / 1400, 1);
+            ent.target.textContent = fmt(Math.round(alvo * (1 - Math.pow(1 - p, 3))), f);
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }), { threshold: 0.4 });
+        els.forEach(e => io.observe(e));
+      }
+    </script>
   </section>
 
   <!-- O QUE FAZEMOS -->
@@ -151,13 +171,21 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
   <section class="section" style="padding-top:48px;padding-bottom:48px">
     <div class="wrap">
       <div class="sec-banner"><span class="num">06</span><h2>Parceiros e marcas</h2></div>
-      <div class="marcas">
-        <img src="/logos/parceiros/intelbras.png" alt="Intelbras" loading="lazy" />
-        <img src="/logos/parceiros/hikvision.png" alt="Hikvision" loading="lazy" />
-        <img src="/logos/parceiros/ambiente-g3.png" alt="Ambiente G3 — Cortinas Motorizadas" loading="lazy" />
-        <img src="/logos/parceiros/quero-automacao.png" alt="Quero Automação" loading="lazy" />
-        <img src="/logos/parceiros/frahm.png" alt="Frahm" loading="lazy" />
-        <img src="/logos/parceiros/ubiquiti.png" alt="Ubiquiti Networks" loading="lazy" />
+      <div class="marquee" aria-label="Marcas parceiras">
+        <div class="marcas track">
+          <img src="/logos/parceiros/intelbras.png" alt="Intelbras" loading="lazy" />
+          <img src="/logos/parceiros/hikvision.png" alt="Hikvision" loading="lazy" />
+          <img src="/logos/parceiros/ambiente-g3.png" alt="Ambiente G3 — Cortinas Motorizadas" loading="lazy" />
+          <img src="/logos/parceiros/quero-automacao.png" alt="Quero Automação" loading="lazy" />
+          <img src="/logos/parceiros/frahm.png" alt="Frahm" loading="lazy" />
+          <img src="/logos/parceiros/ubiquiti.png" alt="Ubiquiti Networks" loading="lazy" />
+          <img src="/logos/parceiros/intelbras.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/parceiros/hikvision.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/parceiros/ambiente-g3.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/parceiros/quero-automacao.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/parceiros/frahm.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/parceiros/ubiquiti.png" alt="" aria-hidden="true" loading="lazy" />
+        </div>
       </div>
       <p style="color:var(--slate)">Equipamentos homologados, com garantia de fábrica e suporte oficial.</p>
     </div>
@@ -171,7 +199,7 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
       <details><summary>Vocês atendem quais cidades?</summary><p>{SITE.cidades} — e projetos fora da região mediante consulta.</p></details>
       <details><summary>Casa pronta pode ser automatizada?</summary><p>Sim. Usamos tecnologias sem fio confiáveis que dispensam quebra de acabamento.</p></details>
       <details><summary>Vocês dão garantia?</summary><p>Equipamentos têm garantia de fábrica (trabalhamos com marcas homologadas) e os serviços têm garantia SEG.</p></details>
-      <p style="margin-top:16px"><a href="/perguntas-frequentes">Ver todas as perguntas →</a></p>
+      <p style="margin-top:16px"><a href="/perguntas-frequentes">Ver todas as perguntas →</a> · Não achou sua dúvida? <a href={waLink('Olá! Tenho uma dúvida que não encontrei no site da SEG.')} rel="noopener">Chama a gente no WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -198,6 +226,12 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .et-num { display: block; color: var(--orange); font-size: .85rem; margin-bottom: 6px; }
 .depo { background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 20px; color: var(--slate); font-size: .95rem; }
 .depo footer { margin-top: 10px; font-weight: 700; color: #fff; font-style: normal; }
+.hero-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.hero-chips span { font-size: .8rem; color: #C9D6EA; border: 1px solid rgba(255,255,255,.22); border-radius: 20px; padding: 6px 14px; }
+.marquee { overflow: hidden; margin-bottom: 18px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marcas.track { display: flex; gap: 56px; align-items: center; width: max-content; animation: rolar 28s linear infinite; }
+.marquee:hover .track { animation-play-state: paused; }
+@keyframes rolar { to { transform: translateX(-50%); } }
 .marcas { display: flex; gap: 40px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
 .marcas img { height: 38px; width: auto; filter: brightness(0) invert(1); opacity: .75; transition: opacity .2s; }
 .marcas img:hover { opacity: 1; }
