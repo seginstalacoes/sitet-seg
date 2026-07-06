@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCollection } from 'astro:content';
+const projetos = (await getCollection('projetos')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Projetos e Cases — SEG Instalações | SEG Instalações"
+  description="Projetos reais de automação, segurança eletrônica e infraestrutura executados pela SEG Instalações em Ilhéus e no sul da Bahia.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Projetos</span>
+    <h1>Projetos reais, resultados reais</h1>
+    <p class="lead" style="color:#C9D6EA;margin-top:12px">Uma amostra do que entregamos — com fotos das nossas próprias instalações.</p>
+  </div></section>
+  <section class="section"><div class="wrap grid grid-3">
+    {projetos.map(p => (
+      <a class="card case-card" href={`/projetos/${p.id}`}>
+        <img src={p.data.foto} alt={p.data.title} loading="lazy" />
+        <div class="case-body">
+          <span class="tag">{p.data.segmento}</span>
+          <h3>{p.data.title}</h3>
+          <p>{p.data.resumo}</p>
+        </div>
+      </a>
+    ))}
+  </div></section>
+  <CtaBand titulo="Quer um projeto assim?" texto="Conte o que você precisa — o levantamento técnico é gratuito." />
+</Base>
+<style>
+.page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
+.page-hero h1 { color: #fff; }
+.case-card { padding: 0; overflow: hidden; }
+.case-card img { width: 100%; height: 220px; object-fit: cover; }
+.case-body { padding: 22px; }
+.tag { display: inline-block; color: var(--orange); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+</style>

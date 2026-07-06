@@ -8,7 +8,8 @@ icon: "lock"
 destaque: false
 order: 5
 waMsg: "Olá! Gostaria de um orçamento para controle de acesso/fechadura digital."
-fotoLabel: "FOTO: leitor facial/fechadura digital instalados pela SEG"
+fotoLabel: "Controle de acesso em porta de escritório e residência"
+foto: "/fotos/conceito/conceito-acesso.webp"
 ---
 Facial, biometria, senha, tag ou celular: controle de acesso moderno para portarias de condomínio, empresas e residências. Cada entrada registrada, permissões por horário e cancelamento imediato de credenciais — sem troca de fechadura quando alguém sai da empresa ou perde a chave.
 

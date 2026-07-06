@@ -6,6 +6,7 @@ metaDescription: "Automação, segurança, som e Wi-Fi para residências em Ilh�
 resumo: "Automação, segurança e conforto para o dia a dia — e gestão à distância para segunda residência."
 icon: "home"
 order: 1
+foto: "/fotos/conceito/conceito-sala-living.webp"
 waMsg: "Olá! Gostaria de um orçamento de tecnologia para minha residência."
 cta: "Solicitar orçamento residencial"
 ---

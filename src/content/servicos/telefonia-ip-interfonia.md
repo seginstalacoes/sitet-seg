@@ -8,7 +8,8 @@ icon: "phone"
 destaque: false
 order: 9
 waMsg: "Olá! Gostaria de um orçamento para interfonia/telefonia IP."
-fotoLabel: "FOTO: terminal de interfonia IP instalado pela SEG"
+fotoLabel: "Interfonia com vídeo — atendimento do portão"
+foto: "/fotos/conceito/conceito-interfonia.webp"
 ---
 Interfonia IP com vídeo para condomínios — atenda o portão pelo celular, de qualquer lugar —, PABX IP para empresas com ramais flexíveis, e integração entre telefonia, acesso e câmeras: o morador vê quem chama e abre o portão pelo aplicativo.
 

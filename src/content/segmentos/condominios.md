@@ -6,6 +6,7 @@ metaDescription: "Acesso, câmeras, interfonia IP, portões e iluminação de á
 resumo: "Sistemas unificados, contrato de manutenção e apresentação técnica pronta para assembleia."
 icon: "building"
 order: 2
+foto: "/fotos/conceito/conceito-condominio.webp"
 waMsg: "Olá! Sou síndico e gostaria de agendar uma avaliação para o condomínio."
 cta: "Agendar reunião técnica"
 ---

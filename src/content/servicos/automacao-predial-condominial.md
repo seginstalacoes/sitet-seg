@@ -8,7 +8,8 @@ icon: "building"
 destaque: true
 order: 2
 waMsg: "Olá! Sou síndico/administrador e gostaria de uma avaliação de automação para o condomínio."
-fotoLabel: "FOTO: portaria/área comum de condomínio atendido pela SEG"
+fotoLabel: "Área comum de condomínio"
+foto: "/fotos/conceito/conceito-condominio.webp"
 ---
 Corredores com luz acesa o dia inteiro, portaria sobrecarregada, sistemas que não conversam entre si e chamados técnicos toda semana. A automação predial ataca exatamente esses custos: iluminação de áreas comuns com sensores e horários, controle de acesso unificado, CFTV integrado, portões, interfonia IP, irrigação e bombas monitoradas — tudo em uma única plataforma de gestão.
 

@@ -125,10 +125,20 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
     <div class="wrap">
       <div class="sec-banner"><span class="num">05</span><h2>Projetos em destaque</h2></div>
       <div class="grid grid-3">
-        <img class="case-foto" src="/fotos/02_cftv_camera_orla.webp" alt="Videomonitoramento com vista para a orla — projeto SEG" loading="lazy" />
-        <img class="case-foto" src="/fotos/01_cftv_camera_hikvision.webp" alt="Câmera de segurança em instalação SEG" loading="lazy" />
-        <img class="case-foto" src="/fotos/06_automacao_painel_parede.webp" alt="Painel de automação residencial — projeto SEG" loading="lazy" />
+        <a class="card case-mini" href="/projetos/cftv-corporativo">
+          <img class="case-foto" src="/fotos/02_cftv_camera_orla.webp" alt="Videomonitoramento corporativo — projeto SEG" loading="lazy" />
+          <div class="case-mini-body"><h3>Videomonitoramento corporativo</h3><p>Empresas · Ilhéus/BA</p></div>
+        </a>
+        <a class="card case-mini" href="/projetos/seguranca-condominio">
+          <img class="case-foto" src="/fotos/01_cftv_camera_hikvision.webp" alt="Segurança em condomínio — projeto SEG" loading="lazy" />
+          <div class="case-mini-body"><h3>Prevenção em condomínio</h3><p>Condomínios · Ilhéus/BA</p></div>
+        </a>
+        <a class="card case-mini" href="/projetos/residencia-inteligente">
+          <img class="case-foto" src="/fotos/08_iluminacao_cortinas_pendente.webp" alt="Residência inteligente — projeto SEG" loading="lazy" />
+          <div class="case-mini-body"><h3>Residência inteligente</h3><p>Residências · Litoral sul</p></div>
+        </a>
       </div>
+      <p style="margin-top:24px"><a class="btn btn-ghost" href="/projetos">Ver todos os projetos</a></p>
       <div class="grid grid-3" style="margin-top:26px">
         <blockquote class="depo">"[DEPOIMENTO 1 — coletar com cliente empresarial]"<footer>— Cliente, Empresa</footer></blockquote>
         <blockquote class="depo">"[DEPOIMENTO 2 — coletar com síndico]"<footer>— Síndico, Condomínio</footer></blockquote>
@@ -176,16 +186,20 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .hero .eyebrow { color: var(--orange); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: center; }
 .hero-foto { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
-.case-foto { width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius); }
+.case-foto { width: 100%; height: 230px; object-fit: cover; }
+.case-mini { padding: 0; overflow: hidden; }
+.case-mini-body { padding: 18px 20px; }
+.case-mini-body p { font-size: .85rem; color: var(--orange); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding: 56px 0; } }
 .card.destaque { border-top: 4px solid var(--orange); }
 .sub-label { color: var(--orange); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 34px 0 14px; }
 .etapas { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; counter-reset: none; }
-.etapas li { background: var(--mist); border-radius: 8px; padding: 16px 14px; font-weight: 700; color: var(--navy); font-size: .92rem; }
+.etapas li { background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 8px; padding: 16px 14px; font-weight: 700; color: #fff; font-size: .92rem; }
 .et-num { display: block; color: var(--orange); font-size: .85rem; margin-bottom: 6px; }
-.depo { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: var(--radius); padding: 20px; color: var(--slate); font-size: .95rem; }
-.depo footer { margin-top: 10px; font-weight: 700; color: var(--navy); font-style: normal; }
+.depo { background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 20px; color: var(--slate); font-size: .95rem; }
+.depo footer { margin-top: 10px; font-weight: 700; color: #fff; font-style: normal; }
 .marcas { display: flex; gap: 40px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
-.marcas img { height: 38px; width: auto; }
+.marcas img { height: 38px; width: auto; filter: brightness(0) invert(1); opacity: .75; transition: opacity .2s; }
+.marcas img:hover { opacity: 1; }
 @media (max-width: 720px) { .marcas { gap: 24px; } .marcas img { height: 30px; } }
 </style>

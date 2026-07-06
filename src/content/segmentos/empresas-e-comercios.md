@@ -6,6 +6,7 @@ metaDescription: "CFTV inteligente, controle de acesso por setor, rede corporati
 resumo: "CFTV inteligente, acesso por setor, rede estável e som ambiente para o seu negócio."
 icon: "users"
 order: 4
+foto: "/fotos/conceito/conceito-acesso.webp"
 waMsg: "Olá! Gostaria de um orçamento de tecnologia para minha empresa."
 cta: "Solicitar orçamento empresarial"
 ---

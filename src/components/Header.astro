@@ -4,7 +4,7 @@ import { SITE, waLink, WA_PADRAO } from '../data/site.js';
 <header class="hdr">
   <div class="wrap bar">
     <a href="/" class="logo" aria-label="SEG Instalações — página inicial">
-      <img src="/logos/seg-logo-cor.svg" alt="SEG Instalações" width="146" height="48" />
+      <img src="/logos/seg-logo-negativa.svg" alt="SEG Instalações" width="146" height="48" />
     </a>
     <nav aria-label="Navegação principal">
       <input type="checkbox" id="nav-t" class="nav-t" aria-hidden="true" />
@@ -29,6 +29,7 @@ import { SITE, waLink, WA_PADRAO } from '../data/site.js';
           </ul>
         </li>
         <li><a href="/segmentos">Segmentos</a></li>
+        <li><a href="/projetos">Projetos</a></li>
         <li><a href="/como-trabalhamos">Como trabalhamos</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/contato">Contato</a></li>
@@ -38,24 +39,24 @@ import { SITE, waLink, WA_PADRAO } from '../data/site.js';
   </div>
 </header>
 <style>
-.hdr { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
+.hdr { position: sticky; top: 0; z-index: 50; background: rgba(6,17,39,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .bar { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .logo { display: flex; align-items: center; text-decoration: none; }
 .logo img { height: 48px; width: auto; }
 .menu { display: flex; align-items: center; gap: 4px; list-style: none; }
-.menu > li > a { display: block; padding: 10px 12px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: .95rem; border-radius: 8px; }
+.menu > li > a { display: block; padding: 10px 12px; text-decoration: none; color: #DDE7F5; font-weight: 700; font-size: .92rem; border-radius: 8px; }
 .menu > li > a:hover { color: var(--orange-dark); }
 .btn-sm { padding: 10px 18px; font-size: .92rem; }
 .has-sub { position: relative; }
-.sub { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px; min-width: 300px; list-style: none; box-shadow: 0 10px 30px rgba(0,38,95,.12); }
+.sub { display: none; position: absolute; top: 100%; left: 0; background: #0B1B3A; border: 1px solid var(--line); border-radius: 10px; padding: 10px; min-width: 300px; list-style: none; box-shadow: 0 18px 40px rgba(0,0,0,.5); }
 .has-sub:hover .sub, .has-sub:focus-within .sub { display: block; }
-.sub a { display: block; padding: 8px 12px; text-decoration: none; color: var(--ink); border-radius: 6px; font-size: .93rem; }
-.sub a:hover { background: var(--mist); color: var(--navy); }
+.sub a { display: block; padding: 8px 12px; text-decoration: none; color: #DDE7F5; border-radius: 6px; font-size: .93rem; }
+.sub a:hover { background: rgba(255,255,255,.06); color: #fff; }
 .sub-head { color: var(--orange); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 10px 12px 4px; }
 .nav-t, .burger { display: none; }
 @media (max-width: 980px) {
-  .burger { display: block; font-size: 1.6rem; color: var(--navy); cursor: pointer; padding: 6px 10px; }
-  .menu { display: none; position: absolute; left: 0; right: 0; top: 68px; background: #fff; flex-direction: column; align-items: stretch; padding: 16px; border-bottom: 1px solid var(--line); gap: 2px; max-height: calc(100vh - 68px); overflow: auto; }
+  .burger { display: block; font-size: 1.6rem; color: #fff; cursor: pointer; padding: 6px 10px; }
+  .menu { display: none; position: absolute; left: 0; right: 0; top: 68px; background: #081530; flex-direction: column; align-items: stretch; padding: 16px; border-bottom: 1px solid var(--line); gap: 2px; max-height: calc(100vh - 68px); overflow: auto; }
   .nav-t:checked ~ .menu { display: flex; }
   .sub { display: block; position: static; box-shadow: none; border: none; padding-left: 16px; min-width: 0; }
   .cta { margin-top: 10px; }

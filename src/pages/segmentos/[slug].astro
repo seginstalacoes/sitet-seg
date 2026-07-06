@@ -24,7 +24,9 @@ const { Content } = await render(s);
     <div class="wrap two-col">
       <div class="prose"><Content /></div>
       <aside>
-        <MediaPh label={`FOTO: projeto SEG no segmento ${s.data.title}`} h={240} />
+        {s.data.foto
+          ? <img src={s.data.foto} alt={s.data.title} loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:var(--radius)" />
+          : <MediaPh label={`FOTO: projeto SEG no segmento ${s.data.title}`} h={240} />}
         <div class="aside-cta">
           <a class="btn btn-primary" href="/orcamento" style="width:100%">{s.data.cta}</a>
           <a class="btn btn-ghost" href={waLink(s.data.waMsg)} rel="noopener" style="width:100%;margin-top:10px">Falar no WhatsApp</a>

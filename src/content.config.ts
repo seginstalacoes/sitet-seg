@@ -29,8 +29,23 @@ const segmentos = defineCollection({
     icon: z.string(),
     order: z.number(),
     waMsg: z.string(),
-    cta: z.string().default('Solicitar orçamento')
+    cta: z.string().default('Solicitar orçamento'),
+    foto: z.string().optional()
   })
 });
 
-export const collections = { servicos, segmentos };
+const projetos = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/projetos' }),
+  schema: z.object({
+    title: z.string(),
+    cliente: z.string(),
+    local: z.string(),
+    segmento: z.string(),
+    resumo: z.string(),
+    sistemas: z.array(z.string()),
+    foto: z.string(),
+    order: z.number()
+  })
+});
+
+export const collections = { servicos, segmentos, projetos };
