@@ -204,6 +204,20 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
   </section>
 
   <CtaBand />
+<script>
+  const v = document.querySelector('.hero-bg');
+  if (v) {
+    const s = v.querySelector('source');
+    s?.addEventListener('error', () => {
+      const img = document.createElement('img');
+      img.className = 'hero-bg';
+      img.src = v.poster; img.alt = '';
+      v.replaceWith(img);
+    });
+    // economia de dados: não força o vídeo em conexões muito lentas
+    if (navigator.connection?.saveData) { v.removeAttribute('autoplay'); v.pause?.(); }
+  }
+</script>
 </Base>
 
 <style>
