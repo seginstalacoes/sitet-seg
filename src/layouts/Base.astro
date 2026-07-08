@@ -52,6 +52,14 @@ const localBusiness = {
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json" set:html={JSON.stringify(schema ?? localBusiness)} />
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRRRLX7DM1"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BRRRLX7DM1', { anonymize_ip: true });
+    </script>
     <slot name="head" />
   </head>
   <body>
