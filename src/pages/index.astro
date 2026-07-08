@@ -211,25 +211,11 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
   </section>
 
   <CtaBand />
-<script>
-  const v = document.querySelector('.hero-bg');
-  if (v) {
-    const s = v.querySelector('source');
-    s?.addEventListener('error', () => {
-      const img = document.createElement('img');
-      img.className = 'hero-bg';
-      img.src = v.poster; img.alt = '';
-      v.replaceWith(img);
-    });
-    // economia de dados: não força o vídeo em conexões muito lentas
-    if (navigator.connection?.saveData) { v.removeAttribute('autoplay'); v.pause?.(); }
-  }
-</script>
 </Base>
 
 <style>
 .hero { position: relative; overflow: hidden; background: var(--navy-deep); }
-.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: url('/fotos/conceito/conceito-residencia.webp') center / cover no-repeat; }
 .hero-veil { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(100deg, rgba(6,17,39,0.94) 30%, rgba(6,17,39,0.55) 65%, rgba(6,17,39,0.35) 100%); }
 .hero-inner { position: relative; z-index: 1; width: 100%; padding-top: 150px; padding-bottom: 130px; }
 .hero h1 { color: #fff; margin: 0 0 20px; font-size: clamp(2.4rem, 5.5vw, 4rem); }
