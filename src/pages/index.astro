@@ -228,17 +228,17 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 </Base>
 
 <style>
-.hero { position: relative; min-height: 86vh; display: flex; align-items: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-veil { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(6,17,39,0.94) 30%, rgba(6,17,39,0.55) 65%, rgba(6,17,39,0.35) 100%); }
-.hero-inner { position: relative; z-index: 1; max-width: var(--maxw); }
+.hero { position: relative; overflow: hidden; background: var(--navy-deep); }
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-veil { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(100deg, rgba(6,17,39,0.94) 30%, rgba(6,17,39,0.55) 65%, rgba(6,17,39,0.35) 100%); }
+.hero-inner { position: relative; z-index: 1; width: 100%; padding-top: 150px; padding-bottom: 130px; }
 .hero h1 { color: #fff; margin: 0 0 20px; font-size: clamp(2.4rem, 5.5vw, 4rem); }
 .hero .dot { color: var(--orange); }
 .hero .lead { color: #C9D6EA; margin-bottom: 34px; max-width: 46ch; font-size: 1.2rem; }
 .hero .eyebrow { color: var(--orange); }
 .hero-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
 .hero-chips span { font-size: .8rem; color: #C9D6EA; border: 1px solid rgba(255,255,255,.22); border-radius: 20px; padding: 6px 14px; }
-@media (max-width: 880px) { .hero { min-height: 72vh; } }
+@media (max-width: 880px) { .hero-inner { padding-top: 90px; padding-bottom: 80px; } }
 .case-foto { width: 100%; height: 230px; object-fit: cover; }
 .case-mini { padding: 0; overflow: hidden; }
 .case-mini-body { padding: 18px 20px; }
@@ -250,8 +250,6 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .et-num { display: block; color: var(--orange); font-size: .85rem; margin-bottom: 6px; }
 .depo { background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-left: 3px solid var(--orange); border-radius: var(--radius); padding: 20px; color: var(--slate); font-size: .95rem; }
 .depo footer { margin-top: 10px; font-weight: 700; color: #fff; font-style: normal; }
-.hero-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
-.hero-chips span { font-size: .8rem; color: #C9D6EA; border: 1px solid rgba(255,255,255,.22); border-radius: 20px; padding: 6px 14px; }
 .marquee { overflow: hidden; margin-bottom: 18px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marcas.track { display: flex; gap: 56px; align-items: center; width: max-content; animation: rolar 28s linear infinite; }
 .marquee:hover .track { animation-play-state: paused; }
