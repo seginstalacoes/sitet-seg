@@ -7,7 +7,7 @@ resumo: "Videomonitoramento profissional com acesso remoto, gravação e recurso
 icon: "camera"
 destaque: false
 order: 4
-waMsg: "Olá! Visitei o site da SEG e gostaria de um orçamento para câmeras/CFTV."
+waMsg: "Olá! Visitei o site da SEG e gostaria de um orçamento para câmeras ou CFTV."
 fotoLabel: "Câmera de segurança instalada pela SEG"
 foto: "/fotos/01_cftv_camera_hikvision.webp"
 ---

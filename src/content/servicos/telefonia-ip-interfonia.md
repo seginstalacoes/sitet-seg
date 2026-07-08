@@ -7,7 +7,7 @@ resumo: "Interfonia IP com vídeo, PABX IP e integração com acesso e câmeras.
 icon: "phone"
 destaque: false
 order: 9
-waMsg: "Olá! Gostaria de um orçamento para interfonia/telefonia IP."
+waMsg: "Olá! Gostaria de um orçamento para interfonia ou telefonia IP."
 fotoLabel: "Interfonia com vídeo — atendimento do portão"
 foto: "/fotos/conceito/conceito-interfonia.webp"
 ---

@@ -6,7 +6,7 @@ metaDescription: "Parceria técnica desde a obra: infraestrutura preparada, kits
 resumo: "Parceria técnica desde a obra: infraestrutura, kits por tipologia e áreas comuns completas."
 icon: "hardhat"
 order: 3
-waMsg: "Olá! Sou de construtora/arquitetura e quero conversar sobre parceria em projetos."
+waMsg: "Olá! Sou de construtora ou arquitetura e quero conversar sobre parceria em projetos."
 cta: "Agendar reunião técnica"
 ---
 Instalar tecnologia depois da obra pronta custa caro e quebra acabamento. Na fase de obra, a infraestrutura sai por uma fração — e o empreendimento ganha um diferencial de venda real.

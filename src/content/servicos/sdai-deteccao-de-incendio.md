@@ -7,7 +7,7 @@ resumo: "Projeto, instalação e manutenção de sistemas de detecção e alarme
 icon: "flame"
 destaque: false
 order: 10
-waMsg: "Olá! Preciso de projeto/manutenção de detecção de incêndio (SDAI)."
+waMsg: "Olá! Preciso de projeto ou manutenção de detecção de incêndio (SDAI)."
 fotoLabel: "FOTO: central e detectores de SDAI instalados pela SEG"
 ---
 Sistemas de detecção e alarme de incêndio para condomínios, empresas e edificações: detectores de fumaça e temperatura, acionadores manuais, sirenes e central supervisionada — projetados e instalados conforme as normas técnicas, com documentação e responsabilidade de engenharia.

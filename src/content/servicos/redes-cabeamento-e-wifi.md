@@ -7,7 +7,7 @@ resumo: "Cabeamento certificado, racks documentados, fibra óptica e Wi-Fi profi
 icon: "network"
 destaque: false
 order: 8
-waMsg: "Olá! Gostaria de um orçamento para rede/cabeamento estruturado."
+waMsg: "Olá! Gostaria de um orçamento para rede ou cabeamento estruturado."
 fotoLabel: "Rack de rede organizado em instalação SEG"
 foto: "/fotos/04_infra_rack_rede.webp"
 ---

@@ -7,7 +7,7 @@ resumo: "Facial, biometria, tags e fechaduras digitais com gestão remota e hist
 icon: "lock"
 destaque: false
 order: 5
-waMsg: "Olá! Gostaria de um orçamento para controle de acesso/fechadura digital."
+waMsg: "Olá! Gostaria de um orçamento para controle de acesso ou fechadura digital."
 fotoLabel: "Controle de acesso em porta de escritório e residência"
 foto: "/fotos/conceito/conceito-acesso.webp"
 ---

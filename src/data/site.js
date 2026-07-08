@@ -7,7 +7,7 @@ export const SITE = {
   foneMovel: '(73) 99152-5743',
   whatsappE164: '5573991525743',
   email: 'contato@seginstalacoes.com.br',
-  instagram: 'https://www.instagram.com/seginstalacoes',
+  instagram: 'https://www.instagram.com/seg_instalacoes',
   cidades: 'Ilhéus, Itabuna, Itacaré, Barra Grande, Una, Canavieiras e região',
   mapsQuery: 'SEG Instalações, Rua Visconde de Mauá, 235, Centro, Ilhéus, BA'
 };

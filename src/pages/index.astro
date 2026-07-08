@@ -27,20 +27,20 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
     </video>
     <div class="hero-veil"></div>
     <div class="wrap hero-inner">
-      <span class="eyebrow">Automação e integração de sistemas · Sul da Bahia</span>
+      <span class="eyebrow">Automação e integração de sistemas</span>
       <h1>Tudo conectado<span class="dot">.</span><br />Tudo sob controle<span class="dot">.</span></h1>
       <p class="lead">
-        Iluminação, segurança, som, acesso e redes funcionando como um só sistema —
-        com projeto e responsabilidade técnica de engenharia.
+        Projetamos, instalamos e integramos sistemas inteligentes para residências,
+        condomínios e empresas — com a segurança de quem já entregou mais de 600 projetos.
       </p>
       <div class="btn-row">
         <a class="btn btn-primary" href="/orcamento">Solicitar orçamento</a>
         <a class="btn btn-ghost-light" href={waLink(WA_PADRAO)} rel="noopener">Falar no WhatsApp</a>
       </div>
       <div class="hero-chips">
-        <span>Parceiros Intelbras &amp; Hikvision</span>
-        <span>Direção técnica de engenharia</span>
-        <span>+600 projetos no sul da Bahia</span>
+        <span>Projetos</span>
+        <span>Equipamentos</span>
+        <span>Suporte e garantia</span>
       </div>
     </div>
   </section>
@@ -48,24 +48,24 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
   <!-- INDICADORES -->
   <section class="section" style="padding-top:44px;padding-bottom:44px">
     <div class="wrap stats" id="stats">
-      <div class="stat"><b>+<span class="count" data-alvo="10">0</span> anos</b><span>de mercado</span></div>
+      <div class="stat"><b>+<span class="count" data-alvo="15">0</span></b><span>anos de mercado</span></div>
       <div class="stat"><b>+<span class="count" data-alvo="600">0</span></b><span>projetos executados</span></div>
       <div class="stat"><b>+<span class="count" data-alvo="3000" data-fmt="mil">0</span></b><span>câmeras instaladas</span></div>
-      <div class="stat"><b>Engenharia</b><span>direção técnica</span></div>
+      <div class="stat"><b><span class="count" data-alvo="100" data-sufixo="%">0</span></b><span>projetos personalizados</span></div>
     </div>
     <script>
       const mReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const fmt = (n, f) => f === 'mil' ? n.toLocaleString('pt-BR') : String(n);
+      const fmt = (n, f, s) => (f === 'mil' ? n.toLocaleString('pt-BR') : String(n)) + (s || '');
       const els = document.querySelectorAll('.count');
-      if (mReduce) { els.forEach(e => e.textContent = fmt(+e.dataset.alvo, e.dataset.fmt)); }
+      if (mReduce) { els.forEach(e => e.textContent = fmt(+e.dataset.alvo, e.dataset.fmt, e.dataset.sufixo)); }
       else {
         const io = new IntersectionObserver((ents) => ents.forEach(ent => {
           if (!ent.isIntersecting) return;
           io.unobserve(ent.target);
-          const alvo = +ent.target.dataset.alvo, f = ent.target.dataset.fmt, t0 = performance.now();
+          const alvo = +ent.target.dataset.alvo, f = ent.target.dataset.fmt, s = ent.target.dataset.sufixo, t0 = performance.now();
           const tick = (t) => {
             const p = Math.min((t - t0) / 1400, 1);
-            ent.target.textContent = fmt(Math.round(alvo * (1 - Math.pow(1 - p, 3))), f);
+            ent.target.textContent = fmt(Math.round(alvo * (1 - Math.pow(1 - p, 3))), f, s);
             if (p < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
@@ -154,23 +154,19 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
       <div class="grid grid-3">
         <a class="card case-mini" href="/projetos/cftv-corporativo">
           <img class="case-foto" src="/fotos/02_cftv_camera_orla.webp" alt="Videomonitoramento corporativo — projeto SEG" loading="lazy" />
-          <div class="case-mini-body"><h3>Videomonitoramento corporativo</h3><p>Empresas · Ilhéus/BA</p></div>
+          <div class="case-mini-body"><h3>Videomonitoramento corporativo</h3><p>Empresas</p></div>
         </a>
         <a class="card case-mini" href="/projetos/seguranca-condominio">
           <img class="case-foto" src="/fotos/01_cftv_camera_hikvision.webp" alt="Segurança em condomínio — projeto SEG" loading="lazy" />
-          <div class="case-mini-body"><h3>Prevenção em condomínio</h3><p>Condomínios · Ilhéus/BA</p></div>
+          <div class="case-mini-body"><h3>Prevenção em condomínio</h3><p>Condomínios</p></div>
         </a>
         <a class="card case-mini" href="/projetos/residencia-inteligente">
           <img class="case-foto" src="/fotos/08_iluminacao_cortinas_pendente.webp" alt="Residência inteligente — projeto SEG" loading="lazy" />
-          <div class="case-mini-body"><h3>Residência inteligente</h3><p>Residências · Litoral sul</p></div>
+          <div class="case-mini-body"><h3>Residência inteligente</h3><p>Residências</p></div>
         </a>
       </div>
       <p style="margin-top:24px"><a class="btn btn-ghost" href="/projetos">Ver todos os projetos</a></p>
-      <div class="grid grid-3" style="margin-top:26px">
-        <blockquote class="depo">"[DEPOIMENTO 1 — coletar com cliente empresarial]"<footer>— Cliente, Empresa</footer></blockquote>
-        <blockquote class="depo">"[DEPOIMENTO 2 — coletar com síndico]"<footer>— Síndico, Condomínio</footer></blockquote>
-        <blockquote class="depo">"[DEPOIMENTO 3 — coletar com cliente residencial]"<footer>— Cliente residencial</footer></blockquote>
-      </div>
+      <!-- Depoimentos ocultos até coleta dos reais -->
     </div>
   </section>
 
@@ -238,6 +234,7 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .depo footer { margin-top: 10px; font-weight: 700; color: #fff; font-style: normal; }
 .marquee { overflow: hidden; margin-bottom: 18px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marcas.track { display: flex; gap: 56px; align-items: center; width: max-content; animation: rolar 28s linear infinite; }
+.marcas.track img { height: 30px; width: auto; max-width: 150px; object-fit: contain; }
 .marquee:hover .track { animation-play-state: paused; }
 @keyframes rolar { to { transform: translateX(-50%); } }
 .marcas { display: flex; gap: 40px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
