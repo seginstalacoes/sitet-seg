@@ -48,9 +48,9 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
   <!-- INDICADORES -->
   <section class="section" style="padding-top:44px;padding-bottom:44px">
     <div class="wrap stats" id="stats">
-      <div class="stat"><b>+<span class="count" data-alvo="15">0</span></b><span>anos de mercado</span></div>
-      <div class="stat"><b>+<span class="count" data-alvo="600">0</span></b><span>projetos executados</span></div>
-      <div class="stat"><b>+<span class="count" data-alvo="3000" data-fmt="mil">0</span></b><span>câmeras instaladas</span></div>
+      <div class="stat"><b><span class="mais">+</span><span class="count" data-alvo="15">0</span></b><span>anos de mercado</span></div>
+      <div class="stat"><b><span class="mais">+</span><span class="count" data-alvo="600">0</span></b><span>projetos executados</span></div>
+      <div class="stat"><b><span class="mais">+</span><span class="count" data-alvo="3000" data-fmt="mil">0</span></b><span>câmeras instaladas</span></div>
       <div class="stat"><b><span class="count" data-alvo="100" data-sufixo="%">0</span></b><span>projetos personalizados</span></div>
     </div>
     <script>
@@ -195,9 +195,47 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
   </section>
 
   <!-- FAQ RESUMIDA -->
+  <!-- CLIENTES -->
+  <section class="section" style="padding-top:48px;padding-bottom:48px">
+    <div class="wrap">
+      <div class="sec-banner"><span class="num">07</span><h2>Alguns dos nossos clientes</h2></div>
+      <div class="marquee" aria-label="Clientes atendidos pela SEG">
+        <div class="marcas clientes track">
+          <img src="/logos/clientes/canabrava.png" alt="Cana Brava All Inclusive Resort" loading="lazy" />
+          <img src="/logos/clientes/gertec.png" alt="GERTEC" loading="lazy" />
+          <img src="/logos/clientes/abaete.png" alt="Abaeté Construtora e Incorporadora" loading="lazy" />
+          <img src="/logos/clientes/daten.png" alt="DATEN Tecnologia" loading="lazy" />
+          <img src="/logos/clientes/brava.png" alt="BRAVA Construtora" loading="lazy" />
+          <img src="/logos/clientes/opaba.png" alt="Opaba Praia Hotel" loading="lazy" />
+          <img src="/logos/clientes/gde.png" alt="G.D.E." loading="lazy" />
+          <img src="/logos/clientes/praia-do-sol.png" alt="Praia do Sol Hotel" loading="lazy" />
+          <img src="/logos/clientes/vog.png" alt="Condomínio VOG João de Góes" loading="lazy" />
+          <img src="/logos/clientes/filezao.png" alt="Filezão Supermercado" loading="lazy" />
+          <img src="/logos/clientes/morro-navegantes.png" alt="Pousada Morro dos Navegantes" loading="lazy" />
+          <img src="/logos/clientes/sabor-do-sul.png" alt="Restaurante Sabor do Sul" loading="lazy" />
+          <img src="/logos/clientes/costa-sul.png" alt="Churrascaria Costa Sul" loading="lazy" />
+          <img src="/logos/clientes/canabrava.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/gertec.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/abaete.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/daten.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/brava.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/opaba.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/gde.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/praia-do-sol.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/vog.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/filezao.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/morro-navegantes.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/sabor-do-sul.png" alt="" aria-hidden="true" loading="lazy" />
+          <img src="/logos/clientes/costa-sul.png" alt="" aria-hidden="true" loading="lazy" />
+        </div>
+      </div>
+      <p style="color:var(--slate)">Hotéis, construtoras, empresas e condomínios que confiam na SEG em Ilhéus e região.</p>
+    </div>
+  </section>
+
   <section class="section alt">
     <div class="wrap">
-      <div class="sec-banner"><span class="num">07</span><h2>Perguntas frequentes</h2></div>
+      <div class="sec-banner"><span class="num">08</span><h2>Perguntas frequentes</h2></div>
       <details><summary>Quanto custa um projeto de automação?</summary><p>Depende dos ambientes e sistemas envolvidos. Projetos modulares começam pelo essencial e crescem por etapas — e o orçamento é gratuito.</p></details>
       <details><summary>Vocês atendem quais cidades?</summary><p>{SITE.cidades} — e projetos fora da região mediante consulta.</p></details>
       <details><summary>Casa pronta pode ser automatizada?</summary><p>Sim. Usamos tecnologias sem fio confiáveis que dispensam quebra de acabamento.</p></details>
@@ -236,6 +274,8 @@ const etapas = ['Levantamento técnico', 'Projeto', 'Instalação', 'Configuraç
 .marcas.track { display: flex; gap: 56px; align-items: center; width: max-content; animation: rolar 28s linear infinite; }
 .marcas.track img { height: 30px; width: auto; max-width: 150px; object-fit: contain; }
 .marquee:hover .track { animation-play-state: paused; }
+.clientes.track { animation-duration: 46s; animation-direction: reverse; }
+.clientes.track img { height: 34px; max-width: 190px; }
 @keyframes rolar { to { transform: translateX(-50%); } }
 .marcas { display: flex; gap: 40px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
 .marcas img { height: 38px; width: auto; filter: brightness(0) invert(1); opacity: .75; transition: opacity .2s; }

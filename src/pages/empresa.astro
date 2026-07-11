@@ -43,6 +43,6 @@ import CtaBand from '../components/CtaBand.astro';
 .page-hero h1 { color: #fff; max-width: 26ch; }
 .two-col { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
 @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
-.logos-parc { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-.logos-parc img { height: 34px; width: auto; filter: brightness(0) invert(1); opacity: .8; }
+.logos-parc { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 24px; align-items: center; justify-items: center; margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 20px; }
+.logos-parc img { height: 52px; width: 100%; max-width: 130px; object-fit: contain; filter: brightness(0) invert(1); opacity: .8; }
 </style>

@@ -124,6 +124,7 @@ a.card:hover { border-color: rgba(232,90,26,.6); transform: translateY(-4px); }
 .stat { background: transparent; border-left: 2px solid var(--orange); padding: 10px 0 10px 22px; text-align: left; }
 .stat b { display: block; font-size: 2.2rem; color: #fff; line-height: 1.1; letter-spacing: -0.02em; }
 .stat span { color: var(--slate); font-size: 0.92rem; }
+.stat b .mais { font-size: 0.62em; vertical-align: 0.22em; margin-right: 2px; letter-spacing: 0; }
 
 /* Placeholder de mídia */
 .media-ph {
