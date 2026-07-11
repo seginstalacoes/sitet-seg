@@ -10,17 +10,38 @@ export async function getStaticPaths() {
 }
 const { p } = Astro.props;
 const { Content } = await render(p);
-const waMsg = `Olá! Vi o case "${p.data.title}" no site da SEG e quero um projeto parecido.`;
+const todos = (await getCollection('projetos')).sort((a, b) => a.data.order - b.data.order);
+const idx = todos.findIndex(t => t.id === p.id);
+const proximo = todos[(idx + 1) % todos.length];
+const temFotos = p.data.fotos && p.data.fotos.length > 0;
+const waMsg = `Olá! Vi o projeto "${p.data.title}" no site da SEG e quero um projeto parecido.`;
 ---
-<Base title={`${p.data.title} | Projetos SEG Instalações`} description={p.data.resumo} waMsg={waMsg}>
+<Base title={`${p.data.title} — ${p.data.local} | Projetos SEG Instalações`} description={p.data.resumo} waMsg={waMsg}>
   <section class="page-hero"><div class="wrap">
-    <span class="eyebrow">{p.data.segmento}</span>
+    <span class="eyebrow">Case · {p.data.segmento}</span>
     <h1>{p.data.title}</h1>
+    {p.data.subtitulo && <p class="subtitulo">{p.data.subtitulo}</p>}
   </div></section>
+
   <section class="section" style="padding-top:48px"><div class="wrap two-col">
     <div>
-      <img src={p.data.foto} alt={p.data.title} style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);margin-bottom:34px" />
+      {temFotos && (
+        <div class="galeria">
+          <img class="g-hero" src={p.data.fotos[0].src} alt={p.data.fotos[0].alt} />
+          {p.data.fotos.length > 1 && (
+            <div class="g-grid">
+              {p.data.fotos.slice(1).map(f => (<img src={f.src} alt={f.alt} loading="lazy" />))}
+            </div>
+          )}
+          <p class="g-label">Fotos reais do projeto — instalação SEG</p>
+        </div>
+      )}
       <div class="prose"><Content /></div>
+      {p.data.quote && (
+        <blockquote class="quote">
+          <p>“{p.data.quote}”</p>
+        </blockquote>
+      )}
     </div>
     <aside>
       <div class="aside-cta">
@@ -28,18 +49,57 @@ const waMsg = `Olá! Vi o case "${p.data.title}" no site da SEG e quero um proje
         <ul class="zebra" style="margin-bottom:20px">
           {p.data.sistemas.map(s => (<li>{s}</li>))}
         </ul>
+        {p.data.destaqueTitulo && (
+          <div class="destaque-card">
+            <p class="d-titulo">{p.data.destaqueTitulo}</p>
+            <p class="d-texto">{p.data.destaqueTexto}</p>
+          </div>
+        )}
         <a class="btn btn-primary" href="/orcamento" style="width:100%">Quero um projeto assim</a>
         <a class="btn btn-ghost" href={waLink(waMsg)} rel="noopener" style="width:100%;margin-top:10px">Falar no WhatsApp</a>
       </div>
     </aside>
   </div></section>
+
+  <section class="proximo"><div class="wrap">
+    <a class="prox-link" href={`/projetos/${proximo.id}`}>
+      <span class="prox-label">Próximo projeto</span>
+      <span class="prox-titulo">{proximo.data.title} <span class="arrow">→</span></span>
+    </a>
+  </div></section>
+
   <CtaBand waMsg={waMsg} />
 </Base>
 <style>
 .page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
 .page-hero h1 { color: #fff; max-width: 26ch; }
+.subtitulo { color: var(--orange); font-weight: 700; font-size: .92rem; letter-spacing: .06em; text-transform: uppercase; margin-top: 14px; }
 .two-col { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
 @media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
 aside { position: sticky; top: 90px; }
 .aside-cta { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.destaque-card {
+  border: 1px solid rgba(232,90,26,0.45); border-left: 3px solid var(--orange);
+  background: rgba(232,90,26,0.07); border-radius: 8px;
+  padding: 16px 18px; margin-bottom: 20px;
+}
+.d-titulo { color: var(--orange); font-weight: 700; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.d-texto { color: var(--ink); font-size: .92rem; line-height: 1.55; }
+.galeria { margin-bottom: 34px; }
+.g-hero { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius); }
+.g-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 10px; }
+.g-grid img { width: 100%; height: 170px; object-fit: cover; border-radius: 8px; }
+.g-label { color: var(--slate); font-size: .8rem; margin-top: 10px; letter-spacing: .04em; }
+.quote {
+  margin-top: 34px; padding: 22px 26px;
+  border-left: 3px solid var(--orange);
+  background: rgba(255,255,255,0.03); border-radius: 0 var(--radius) var(--radius) 0;
+}
+.quote p { color: var(--ink); font-style: italic; font-size: 1.08rem; line-height: 1.6; }
+.proximo { border-top: 1px solid var(--line); }
+.prox-link { display: flex; flex-direction: column; gap: 6px; padding: 34px 0; text-decoration: none; }
+.prox-label { color: var(--orange); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.prox-titulo { color: #fff; font-weight: 700; font-size: 1.35rem; }
+.prox-titulo .arrow { color: var(--orange); transition: transform .2s ease; display: inline-block; }
+.prox-link:hover .arrow { transform: translateX(6px); }
 </style>

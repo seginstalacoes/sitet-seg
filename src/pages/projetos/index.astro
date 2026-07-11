@@ -5,30 +5,60 @@ import { getCollection } from 'astro:content';
 const projetos = (await getCollection('projetos')).sort((a, b) => a.data.order - b.data.order);
 ---
 <Base title="Projetos e Cases — SEG Instalações | SEG Instalações"
-  description="Projetos reais de automação, segurança eletrônica e infraestrutura executados pela SEG Instalações em Ilhéus e no sul da Bahia.">
-  <section class="page-hero"><div class="wrap"><span class="eyebrow">Projetos</span>
-    <h1>Projetos reais, resultados reais</h1>
-    <p class="lead" style="color:#C9D6EA;margin-top:12px">Uma amostra do que entregamos — com fotos das nossas próprias instalações.</p>
+  description="Projetos reais de automação, segurança eletrônica e infraestrutura executados pela SEG Instalações em Ilhéus e no sul da Bahia: Casa BQ2-L23, Vila Aweto, Casa A72 e Casa Modular.">
+  <section class="page-hero"><div class="wrap">
+    <span class="eyebrow">Projetos</span>
+    <h1>Projetos reais, entregues no litoral sul da Bahia</h1>
+    <p class="lead" style="color:#C9D6EA;margin-top:12px">De residências de alto padrão a complexos pé na areia — uma seleção do que projetamos, instalamos e integramos. Abra cada projeto para conhecer o desafio, a solução e o escopo completo.</p>
   </div></section>
-  <section class="section"><div class="wrap grid grid-3">
-    {projetos.map(p => (
-      <a class="card case-card" href={`/projetos/${p.id}`}>
-        <img src={p.data.foto} alt={p.data.title} loading="lazy" />
-        <div class="case-body">
-          <span class="tag">{p.data.segmento}</span>
-          <h3>{p.data.title}</h3>
-          <p>{p.data.resumo}</p>
-        </div>
-      </a>
-    ))}
+
+  <section class="section"><div class="wrap">
+    <div class="grid cases-grid">
+      {projetos.map((p, i) => (
+        <a class="card case-card" href={`/projetos/${p.id}`}>
+          <div class="case-media">
+            <img src={p.data.foto} alt={`${p.data.title} — projeto SEG Instalações`} loading={i < 2 ? 'eager' : 'lazy'} />
+            <span class="case-num">{String(i + 1).padStart(2, '0')}</span>
+          </div>
+          <div class="case-body">
+            <div class="case-meta">
+              <span class="tag">{p.data.segmento}</span>
+              <span class="local">{p.data.local}</span>
+            </div>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.resumo}</p>
+            <span class="case-link">Ver projeto <span class="arrow">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
   </div></section>
+
   <CtaBand titulo="Quer um projeto assim?" texto="Conte o que você precisa — o levantamento técnico é gratuito." />
 </Base>
 <style>
 .page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
 .page-hero h1 { color: #fff; }
-.case-card { padding: 0; overflow: hidden; }
-.case-card img { width: 100%; height: 220px; object-fit: cover; }
-.case-body { padding: 22px; }
-.tag { display: inline-block; color: var(--orange); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+.cases-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
+.case-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.case-media { position: relative; overflow: hidden; }
+.case-media img { width: 100%; height: 280px; object-fit: cover; transition: transform .5s ease; }
+a.case-card:hover .case-media img { transform: scale(1.05); }
+.case-num {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(6,17,39,0.72); backdrop-filter: blur(4px);
+  border: 1px solid rgba(232,90,26,0.55); color: var(--orange);
+  font-weight: 700; font-size: .85rem; letter-spacing: .08em;
+  padding: 5px 11px; border-radius: 6px;
+}
+.case-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.case-meta { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.tag { color: var(--orange); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.local { color: var(--slate); font-size: .82rem; }
+.case-body h3 { font-size: 1.3rem; margin: 0; }
+.case-body p { color: var(--slate); font-size: .98rem; margin: 0; }
+.case-link { margin-top: auto; padding-top: 8px; color: #fff; font-weight: 700; font-size: .92rem; }
+.case-link .arrow { color: var(--orange); transition: transform .2s ease; display: inline-block; }
+a.case-card:hover .case-link .arrow { transform: translateX(4px); }
+@media (max-width: 720px) { .case-media img { height: 220px; } }
 </style>
