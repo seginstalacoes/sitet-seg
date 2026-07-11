@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import MediaPh from '../components/MediaPh.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<Base title="Sobre a SEG Instalações — Integradora de Tecnologia no Sul da Bahia | SEG Instalações"
+  description="Há mais de 15 anos, desde 2009, integrando automação, segurança eletrônica e redes em Ilhéus e região. Conheça a história, os valores e a direção técnica de engenharia da SEG."
+  waMsg="Olá! Gostaria de conhecer melhor a SEG Instalações.">
+  <section class="page-hero"><div class="wrap"><span class="eyebrow">Empresa</span>
+    <h1>Uma integradora de tecnologia feita de engenharia e obra bem entregue</h1></div></section>
+
+  <section class="section"><div class="wrap two-col">
+    <div class="prose">
+      <p class="lead">Desde 2009, a SEG Instalações transforma tecnologia em resultado prático para residências, condomínios e empresas do sul da Bahia — são mais de 15 anos de mercado sob a mesma marca.</p>
+      <p>Começamos pela segurança eletrônica — e foram mais de 600 projetos e 3.000 câmeras instaladas que nos ensinaram o que realmente sustenta qualquer sistema: infraestrutura bem projetada. Hoje, essa experiência é a base da nossa especialidade: <strong>automação e integração de sistemas</strong>, fazendo iluminação, segurança, som, acesso e redes funcionarem juntos.</p>
+      <h2>Direção técnica de engenharia</h2>
+      <p>A SEG é dirigida por Danilo Alves de Oliveira, Diretor Técnico com formação em Engenharia Elétrica. Na prática, isso significa que cada projeto nasce com dimensionamento, memorial e critério técnico — não no improviso.</p>
+      <h2>Missão, visão e valores</h2>
+      <ul>
+        <li><strong>Missão</strong> — Integrar tecnologia com engenharia para tornar ambientes mais seguros, confortáveis e eficientes.</li>
+        <li><strong>Visão</strong> — Ser a referência em automação e integração de sistemas no sul da Bahia.</li>
+        <li><strong>Valores</strong> — Responsabilidade técnica · Transparência · Entrega completa, do projeto ao treinamento · Relacionamento de longo prazo.</li>
+      </ul>
+      <h2>Parcerias e marcas homologadas</h2>
+      <p>Não instalamos qualquer equipamento. Cada marca que entra em um projeto SEG passou por critério técnico: desempenho comprovado, garantia de fábrica, peças e suporte disponíveis no Brasil. É o que garante que o sistema entregue hoje continue funcionando — e com quem responder por ele — pelos próximos anos.</p>
+    </div>
+    <aside>
+      <img src="/fotos/03_equipe_instalacao_som.webp" alt="Equipe SEG em instalação de sonorização" loading="lazy" style="width:100%;height:340px;object-fit:cover;border-radius:var(--radius)" />
+      <div class="logos-parc">
+        <img src="/logos/parceiros/intelbras.png" alt="Intelbras" loading="lazy" />
+        <img src="/logos/parceiros/hikvision.png" alt="Hikvision" loading="lazy" />
+        <img src="/logos/parceiros/ambiente-g3.png" alt="Ambiente G3 — Cortinas Motorizadas" loading="lazy" />
+        <img src="/logos/parceiros/quero-automacao.png" alt="Quero Automação" loading="lazy" />
+        <img src="/logos/parceiros/frahm.png" alt="Frahm" loading="lazy" />
+        <img src="/logos/parceiros/ubiquiti.png" alt="Ubiquiti Networks" loading="lazy" />
+      </div>
+    </aside>
+  </div></section>
+  <CtaBand titulo="Quer conhecer nosso método de trabalho?" texto="Do levantamento técnico à manutenção — o mesmo rigor em todo projeto." />
+</Base>
+<style>
+.page-hero { background: var(--navy); color: #fff; padding: 56px 0; }
+.page-hero h1 { color: #fff; max-width: 26ch; }
+.two-col { display: grid; grid-template-columns: 1.6fr 1fr; gap: 44px; align-items: start; }
+@media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
+.logos-parc { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 24px; align-items: center; justify-items: center; margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 20px; }
+.logos-parc img { height: 52px; width: 100%; max-width: 130px; object-fit: contain; filter: brightness(0) invert(1); opacity: .8; }
+</style>
