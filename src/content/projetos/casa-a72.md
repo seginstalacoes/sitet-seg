@@ -6,12 +6,20 @@ local: "Condomínio Cidadelle Praia — Ilhéus/BA"
 segmento: "Residencial"
 resumo: "Fachada contemporânea, amplas áreas integradas e um projeto tecnológico completo: automação, sonorização, Home Cinema e infraestrutura de ponta a ponta."
 sistemas: ["Automação total de ambientes", "Home Cinema premium", "Sonorização ambiente", "CFTV IP", "Cortinas e persianas motorizadas", "Wi-Fi de alto desempenho", "Rede estruturada"]
-foto: "/fotos/conceito/conceito-sala-living.webp"
-fotos: []
+foto: "/fotos/projetos/casa-a72/casa-a72-01.webp"
+fotos:
+  - src: "/fotos/projetos/casa-a72/casa-a72-01.webp"
+    alt: "Fachada da Casa A72 — Condomínio Cidadelle Praia"
+  - src: "/fotos/projetos/casa-a72/casa-a72-02.webp"
+    alt: "Painel de parede com relógio integrado à automação"
+  - src: "/fotos/projetos/casa-a72/casa-a72-03.webp"
+    alt: "Infraestrutura de bombas integrada à automação da residência"
+  - src: "/fotos/projetos/casa-a72/casa-a72-04.webp"
+    alt: "Rack de rede estruturada da Casa A72"
 destaqueTitulo: "Integração técnica completa"
 destaqueTexto: "Automação centralizada, sonorização embutida, rede estruturada e infraestrutura de bombas — toda a casa integrada e controlável."
 quote: "Automação centralizada, sonorização embutida e infraestrutura completa — toda a casa integrada e controlável, do living às áreas externas."
-order: 3
+order: 4
 ---
 ## O desafio
 

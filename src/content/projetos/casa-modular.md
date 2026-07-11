@@ -6,10 +6,16 @@ local: "Pedras de Una — Una/BA"
 segmento: "Residencial"
 resumo: "Segurança e conectividade de alto desempenho em uma residência modular remota, às margens do rio e do mar."
 sistemas: ["CFTV IP de alta resolução", "Wi-Fi de alto desempenho", "Interfonia IP integrada", "Rede estruturada", "Conectividade em área remota"]
-foto: "/fotos/conceito/conceito-residencia.webp"
-fotos: []
+foto: "/fotos/projetos/casa-modular/casa-modular-01.webp"
+fotos:
+  - src: "/fotos/projetos/casa-modular/casa-modular-01.webp"
+    alt: "Casa Modular à noite com iluminação dos decks — Pedras de Una"
+  - src: "/fotos/projetos/casa-modular/casa-modular-02.webp"
+    alt: "Vista aérea de Pedras de Una com o rio encontrando o mar"
+  - src: "/fotos/projetos/casa-modular/casa-modular-03.webp"
+    alt: "Varanda em madeira da Casa Modular com rede e pendentes"
 quote: "O desafio foi levar conectividade e segurança a uma residência isolada, à beira-rio e mar — com rede estruturada, Wi-Fi de alto desempenho e CFTV onde a conexão parecia impossível."
-order: 4
+order: 2
 ---
 ## O desafio
 

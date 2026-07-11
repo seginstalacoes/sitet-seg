@@ -6,10 +6,22 @@ local: "Praia de Luzimares — Ilhéus/BA"
 segmento: "Hospedagem"
 resumo: "Integração, conectividade e segurança em um complexo pé na areia com 5 bangalôs, 2 repúblicas e sala de cinema."
 sistemas: ["Câmeras IP de alta resolução", "Wi-Fi de alto desempenho", "Interfonia IP distribuída", "Home Theater personalizado", "Rede estruturada"]
-foto: "/fotos/conceito/conceito-condominio.webp"
-fotos: []
+foto: "/fotos/projetos/vila-aweto/vila-aweto-01.webp"
+fotos:
+  - src: "/fotos/projetos/vila-aweto/vila-aweto-01.webp"
+    alt: "Vista aérea da Vila Aweto ao pôr do sol — complexo pé na areia na Praia de Luzimares"
+  - src: "/fotos/projetos/vila-aweto/vila-aweto-02.webp"
+    alt: "Piscina e deck de madeira da Vila Aweto entre os coqueiros"
+  - src: "/fotos/projetos/vila-aweto/vila-aweto-03.webp"
+    alt: "Sala de cinema da Vila Aweto com projetor e sonorização instalados pela SEG"
+  - src: "/fotos/projetos/vila-aweto/vila-aweto-04.webp"
+    alt: "Câmera IP e ponto de acesso Wi-Fi externo instalados em poste de madeira"
+  - src: "/fotos/projetos/vila-aweto/vila-aweto-05.webp"
+    alt: "Interfone IP integrado à estrutura de madeira do complexo"
+  - src: "/fotos/projetos/vila-aweto/vila-aweto-06.webp"
+    alt: "Caixa acústica JBL instalada na sala de cinema"
 quote: "A proposta desse projeto foi trazer integração, conectividade e segurança para todo o ambiente — desde os bangalôs ao espaço de cinema — em um complexo pé na areia."
-order: 2
+order: 1
 ---
 ## O desafio
 
