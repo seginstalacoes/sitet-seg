@@ -101,7 +101,7 @@ Três regras que resolvem 90% dos casos:
 
 **→ [Automação residencial: o que é, como funciona e por onde começar](/blog/automacao-residencial-o-que-e-como-funciona)** — o mapa completo do assunto.
 
-O próximo bloco entra em infraestrutura: o que deixar pronto antes do reboco, como projetar a rede que sustenta tudo isso e por que a lâmpada dimerizada pisca.
+O próximo bloco entra em infraestrutura: o que deixar pronto antes do reboco e como projetar a rede que sustenta tudo isso.
 
 ---
 

@@ -101,7 +101,7 @@ O caminho errado, e o mais comum, é comprar sete dispositivos de marcas diferen
 
 Esta matéria é o ponto de partida de uma série. Os próximos blocos cobrem:
 
-- **Infraestrutura** — o que deixar pronto antes do reboco, cabeamento estruturado e rede, dimensionamento de dimmers e relés.
+- **Infraestrutura** — o que deixar pronto antes do reboco, cabeamento estruturado e a rede que sustenta tudo.
 - **Subsistemas** — iluminação e cenas, som ambiente e multiroom, CFTV que realmente serve, controle de acesso e portaria.
 - **Decisão** — quanto custa automatizar de verdade e os erros que mais aparecem em projeto.
 
