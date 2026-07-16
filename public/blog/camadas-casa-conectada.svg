@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">As cinco camadas de uma casa conectada</title>
+  <desc id="d">Pilha de cinco camadas, da base ao topo: infraestrutura física, rede de dados, dispositivos e cargas, controle e automação, e experiência do morador. Cada camada só funciona se a de baixo estiver bem feita.</desc>
+
+  <defs>
+    <style>
+      .bg{fill:#070D18}
+      .hd{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:26px;fill:#E8EDF5}
+      .cap{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:13px;fill:#6F82A0}
+      .num{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:15px;fill:#070D18}
+      .lt{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:20px;fill:#E8EDF5;letter-spacing:.02em}
+      .ls{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:14px;fill:#93A6C0}
+      .layer{stroke:#22334E;stroke-width:1.5}
+      .side{font-family:Poppins,Arial,sans-serif;font-weight:600;font-size:12px;fill:#5E7290;letter-spacing:.14em}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="hd" x="80" y="70">A casa conectada é uma pilha, não uma lista de compras</text>
+  <text class="cap" x="80" y="98">Cada camada depende inteiramente da qualidade da camada de baixo. Pular uma é onde os projetos quebram.</text>
+
+  <!-- Layer 5 -->
+  <rect class="layer" x="200" y="140" width="820" height="94" rx="10" fill="#1A2C49"/>
+  <circle cx="240" cy="187" r="15" fill="#E85A1A"/><text class="num" x="240" y="192" text-anchor="middle">05</text>
+  <text class="lt" x="276" y="180">Experiência</text>
+  <text class="ls" x="276" y="205">App, comando de voz, cenas do dia a dia — a única parte que o morador vê</text>
+
+  <!-- Layer 4 -->
+  <rect class="layer" x="180" y="252" width="860" height="94" rx="10" fill="#16263F"/>
+  <circle cx="220" cy="299" r="15" fill="#E85A1A"/><text class="num" x="220" y="304" text-anchor="middle">04</text>
+  <text class="lt" x="256" y="292">Controle e automação</text>
+  <text class="ls" x="256" y="317">Central, gateway, lógicas, cenários, rotinas e integração entre sistemas</text>
+
+  <!-- Layer 3 -->
+  <rect class="layer" x="160" y="364" width="900" height="94" rx="10" fill="#122036"/>
+  <circle cx="200" cy="411" r="15" fill="#E85A1A"/><text class="num" x="200" y="416" text-anchor="middle">03</text>
+  <text class="lt" x="236" y="404">Dispositivos e cargas</text>
+  <text class="ls" x="236" y="429">Módulos, dimmers, relés, câmeras, fechaduras, caixas de som, sensores</text>
+
+  <!-- Layer 2 -->
+  <rect class="layer" x="140" y="476" width="940" height="94" rx="10" fill="#0F1B2E"/>
+  <circle cx="180" cy="523" r="15" fill="#E85A1A"/><text class="num" x="180" y="528" text-anchor="middle">02</text>
+  <text class="lt" x="216" y="516">Rede de dados</text>
+  <text class="ls" x="216" y="541">Roteador, switch, pontos de acesso, VLANs — o sistema nervoso da casa</text>
+
+  <!-- Layer 1 -->
+  <rect class="layer" x="120" y="588" width="980" height="94" rx="10" fill="#0B1524"/>
+  <circle cx="160" cy="635" r="15" fill="#E85A1A"/><text class="num" x="160" y="640" text-anchor="middle">01</text>
+  <text class="lt" x="196" y="628">Infraestrutura física</text>
+  <text class="ls" x="196" y="653">Eletrodutos, caixas, quadro, cabeamento estruturado e energia limpa</text>
+
+  <!-- side rail -->
+  <line x1="1120" y1="150" x2="1120" y2="672" stroke="#2A3D5C" stroke-width="2"/>
+  <path d="M1120 150 l -5 9 l 10 0 z" fill="#2A3D5C"/>
+  <text class="side" x="1146" y="410" transform="rotate(90 1146 410)" text-anchor="middle">VISÍVEL AO MORADOR</text>
+  <text class="side" x="88" y="410" transform="rotate(-90 88 410)" text-anchor="middle">CUSTO DE ERRAR</text>
+  <line x1="88" y1="150" x2="88" y2="672" stroke="#2A3D5C" stroke-width="2"/>
+  <path d="M88 672 l -5 -9 l 10 0 z" fill="#2A3D5C"/>
+</svg>

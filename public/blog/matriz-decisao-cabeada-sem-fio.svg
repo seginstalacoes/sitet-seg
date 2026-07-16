@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="t d">
+  <title id="t">Matriz de decisão entre automação cabeada, sem fio e híbrida</title>
+  <desc id="d">Eixo horizontal: estágio da obra, de casa pronta a projeto na planta. Eixo vertical: criticidade do sistema, de conforto a missão crítica. A automação sem fio ocupa a região de casa pronta e conforto, a cabeada a região de projeto na planta e missão crítica, e a solução híbrida a faixa intermediária.</desc>
+
+  <defs>
+    <style>
+      .bg{fill:#070D18}
+      .axis{stroke:#2A3D5C;stroke-width:2}
+      .grid{stroke:#141F35;stroke-width:1}
+      .axl{font-family:Poppins,Arial,sans-serif;font-weight:600;font-size:14px;fill:#8DA0BC;letter-spacing:.08em}
+      .zt{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:22px;fill:#E8EDF5}
+      .zs{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:13px;fill:#9FB2CB}
+      .cap{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:13px;fill:#6F82A0}
+      .hd{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:24px;fill:#E8EDF5;letter-spacing:.02em}
+    </style>
+    <linearGradient id="gw" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4FA3E3" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#4FA3E3" stop-opacity=".06"/>
+    </linearGradient>
+    <linearGradient id="gc" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#E85A1A" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#E85A1A" stop-opacity=".34"/>
+    </linearGradient>
+    <linearGradient id="gh" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#4FA3E3" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#E85A1A" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+
+  <rect class="bg" width="1200" height="700"/>
+  <text class="hd" x="80" y="66">Onde cada arquitetura ganha</text>
+  <text class="cap" x="80" y="92">Não é uma escolha de gosto. É uma consequência de duas variáveis.</text>
+
+  <!-- grid -->
+  <g class="grid">
+    <line x1="140" y1="180" x2="1120" y2="180"/>
+    <line x1="140" y1="300" x2="1120" y2="300"/>
+    <line x1="140" y1="420" x2="1120" y2="420"/>
+    <line x1="140" y1="540" x2="1120" y2="540"/>
+    <line x1="385" y1="150" x2="385" y2="600"/>
+    <line x1="630" y1="150" x2="630" y2="600"/>
+    <line x1="875" y1="150" x2="875" y2="600"/>
+  </g>
+
+  <!-- zones -->
+  <path d="M140 600 L 560 600 L 560 380 L 140 380 Z" fill="url(#gw)" stroke="#4FA3E3" stroke-width="1.5" stroke-opacity=".5" rx="8"/>
+  <path d="M700 150 L 1120 150 L 1120 370 L 700 370 Z" fill="url(#gc)" stroke="#E85A1A" stroke-width="1.5" stroke-opacity=".6"/>
+  <path d="M440 260 L 880 260 L 880 500 L 440 500 Z" fill="url(#gh)" stroke="#7E8FA8" stroke-width="1.5" stroke-dasharray="6 6" stroke-opacity=".7"/>
+
+  <!-- zone labels -->
+  <text class="zt" x="176" y="452">SEM FIO</text>
+  <text class="zs" x="176" y="478">Casa habitada, reforma pontual,</text>
+  <text class="zs" x="176" y="498">luz e tomada, orçamento contido</text>
+
+  <text class="zt" x="736" y="200">CABEADA</text>
+  <text class="zs" x="736" y="226">Obra na planta, muitos pontos,</text>
+  <text class="zs" x="736" y="246">automação que não pode falhar</text>
+
+  <text class="zt" x="560" y="318" text-anchor="middle">HÍBRIDA</text>
+  <text class="zs" x="560" y="344" text-anchor="middle">Cabeado no que é crítico,</text>
+  <text class="zs" x="560" y="364" text-anchor="middle">rádio no que é acessório</text>
+
+  <!-- axes -->
+  <line class="axis" x1="140" y1="600" x2="1140" y2="600"/>
+  <line class="axis" x1="140" y1="600" x2="140" y2="140"/>
+  <path d="M1140 600 l -10 -6 l 0 12 z" fill="#2A3D5C"/>
+  <path d="M140 140 l -6 10 l 12 0 z" fill="#2A3D5C"/>
+
+  <text class="axl" x="140" y="636">CASA PRONTA</text>
+  <text class="axl" x="1140" y="636" text-anchor="end">PROJETO NA PLANTA</text>
+  <text class="axl" x="80" y="600" transform="rotate(-90 80 600)">CONFORTO</text>
+  <text class="axl" x="80" y="140" transform="rotate(-90 80 140)" text-anchor="end">MISSÃO CRÍTICA</text>
+
+  <text class="cap" x="80" y="676">SEG Instalações · Ilhéus / Itabuna · Tudo conectado. Tudo sob controle.</text>
+</svg>

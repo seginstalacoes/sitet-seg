@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="t d">
+  <title id="t">Comparativo entre os protocolos Wi-Fi, Zigbee, Z-Wave, KNX e Matter</title>
+  <desc id="d">Cinco colunas comparando meio físico, topologia, consumo, alcance típico e aplicação recomendada para Wi-Fi, Zigbee, Z-Wave, KNX e Matter.</desc>
+
+  <defs>
+    <style>
+      .bg{fill:#070D18}
+      .hd{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:26px;fill:#E8EDF5}
+      .cap{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:13px;fill:#6F82A0}
+      .rowlbl{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:12px;fill:#5E7290;letter-spacing:.12em}
+      .col{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:19px;fill:#E8EDF5}
+      .val{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:14px;fill:#B4C4DA}
+      .card{stroke:#1E2E48;stroke-width:1.5;fill:#0C1526}
+      .rule{stroke:#16233A;stroke-width:1}
+      .pill{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:10px;fill:#070D18;letter-spacing:.08em}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="700"/>
+  <text class="hd" x="60" y="58">Cinco protocolos, cinco propósitos diferentes</text>
+  <text class="cap" x="60" y="84">Nenhum é o melhor. Cada um resolve um problema que os outros resolvem pior.</text>
+
+  <!-- columns -->
+  <g>
+    <rect class="card" x="228" y="112" width="180" height="520" rx="12"/>
+    <rect class="card" x="420" y="112" width="180" height="520" rx="12"/>
+    <rect class="card" x="612" y="112" width="180" height="520" rx="12"/>
+    <rect class="card" x="804" y="112" width="180" height="520" rx="12"/>
+    <rect x="996" y="112" width="180" height="520" rx="12" fill="#14203A" stroke="#E85A1A" stroke-width="1.8"/>
+  </g>
+
+  <!-- headers -->
+  <text class="col" x="318" y="152" text-anchor="middle">Wi-Fi</text>
+  <text class="col" x="510" y="152" text-anchor="middle">Zigbee</text>
+  <text class="col" x="702" y="152" text-anchor="middle">Z-Wave</text>
+  <text class="col" x="894" y="152" text-anchor="middle">KNX</text>
+  <text class="col" x="1086" y="152" text-anchor="middle">Matter</text>
+  <rect x="1032" y="164" width="108" height="18" rx="9" fill="#E85A1A"/>
+  <text class="pill" x="1086" y="177" text-anchor="middle">CAMADA COMUM</text>
+
+  <!-- row lines -->
+  <g class="rule">
+    <line x1="60" y1="196" x2="1176" y2="196"/>
+    <line x1="60" y1="284" x2="1176" y2="284"/>
+    <line x1="60" y1="372" x2="1176" y2="372"/>
+    <line x1="60" y1="460" x2="1176" y2="460"/>
+    <line x1="60" y1="548" x2="1176" y2="548"/>
+  </g>
+
+  <!-- row labels -->
+  <text class="rowlbl" x="60" y="238">MEIO</text>
+  <text class="rowlbl" x="60" y="326">TOPOLOGIA</text>
+  <text class="rowlbl" x="60" y="414">CONSUMO</text>
+  <text class="rowlbl" x="60" y="502">O QUE ELE É BOM</text>
+  <text class="rowlbl" x="60" y="590">ONDE TROPEÇA</text>
+
+  <!-- MEIO -->
+  <text class="val" x="318" y="230" text-anchor="middle">Rádio</text><text class="val" x="318" y="250" text-anchor="middle">2,4 / 5 GHz</text>
+  <text class="val" x="510" y="230" text-anchor="middle">Rádio</text><text class="val" x="510" y="250" text-anchor="middle">2,4 GHz</text>
+  <text class="val" x="702" y="230" text-anchor="middle">Rádio</text><text class="val" x="702" y="250" text-anchor="middle">sub-GHz</text>
+  <text class="val" x="894" y="230" text-anchor="middle">Par trançado</text><text class="val" x="894" y="250" text-anchor="middle">(cabo)</text>
+  <text class="val" x="1086" y="230" text-anchor="middle">Roda sobre</text><text class="val" x="1086" y="250" text-anchor="middle">Wi-Fi / Thread</text>
+
+  <!-- TOPOLOGIA -->
+  <text class="val" x="318" y="326" text-anchor="middle">Estrela</text>
+  <text class="val" x="510" y="326" text-anchor="middle">Mesh</text>
+  <text class="val" x="702" y="326" text-anchor="middle">Mesh</text>
+  <text class="val" x="894" y="326" text-anchor="middle">Barramento</text>
+  <text class="val" x="1086" y="326" text-anchor="middle">Herda a de baixo</text>
+
+  <!-- CONSUMO -->
+  <g>
+    <rect x="268" y="404" width="100" height="8" rx="4" fill="#1E2E48"/><rect x="268" y="404" width="88" height="8" rx="4" fill="#E85A1A"/>
+    <text class="val" x="318" y="436" text-anchor="middle">Alto</text>
+  </g>
+  <g>
+    <rect x="460" y="404" width="100" height="8" rx="4" fill="#1E2E48"/><rect x="460" y="404" width="26" height="8" rx="4" fill="#4FA3E3"/>
+    <text class="val" x="510" y="436" text-anchor="middle">Muito baixo</text>
+  </g>
+  <g>
+    <rect x="652" y="404" width="100" height="8" rx="4" fill="#1E2E48"/><rect x="652" y="404" width="22" height="8" rx="4" fill="#4FA3E3"/>
+    <text class="val" x="702" y="436" text-anchor="middle">Muito baixo</text>
+  </g>
+  <g>
+    <rect x="844" y="404" width="100" height="8" rx="4" fill="#1E2E48"/><rect x="844" y="404" width="40" height="8" rx="4" fill="#4FA3E3"/>
+    <text class="val" x="894" y="436" text-anchor="middle">Baixo (via bus)</text>
+  </g>
+  <g>
+    <rect x="1036" y="404" width="100" height="8" rx="4" fill="#1E2E48"/><rect x="1036" y="404" width="55" height="8" rx="4" fill="#8DA0BC"/>
+    <text class="val" x="1086" y="436" text-anchor="middle">Depende</text>
+  </g>
+
+  <!-- BOM -->
+  <text class="val" x="318" y="496" text-anchor="middle">Câmera, TV,</text><text class="val" x="318" y="516" text-anchor="middle">tudo que usa banda</text>
+  <text class="val" x="510" y="496" text-anchor="middle">Sensor e lâmpada</text><text class="val" x="510" y="516" text-anchor="middle">a pilha, em volume</text>
+  <text class="val" x="702" y="496" text-anchor="middle">Atravessar parede</text><text class="val" x="702" y="516" text-anchor="middle">sem disputar banda</text>
+  <text class="val" x="894" y="496" text-anchor="middle">Prédio, hotel,</text><text class="val" x="894" y="516" text-anchor="middle">casa de grande porte</text>
+  <text class="val" x="1086" y="496" text-anchor="middle">Marcas diferentes</text><text class="val" x="1086" y="516" text-anchor="middle">conversando entre si</text>
+
+  <!-- TROPEÇA -->
+  <text class="val" x="318" y="584" text-anchor="middle">Rede lotada,</text><text class="val" x="318" y="604" text-anchor="middle">bateria acaba</text>
+  <text class="val" x="510" y="584" text-anchor="middle">Divide 2,4 GHz</text><text class="val" x="510" y="604" text-anchor="middle">com o Wi-Fi</text>
+  <text class="val" x="702" y="584" text-anchor="middle">Menos produto</text><text class="val" x="702" y="604" text-anchor="middle">no Brasil</text>
+  <text class="val" x="894" y="584" text-anchor="middle">Custo e obra</text><text class="val" x="894" y="604" text-anchor="middle">obrigatória</text>
+  <text class="val" x="1086" y="584" text-anchor="middle">Suporte ainda</text><text class="val" x="1086" y="604" text-anchor="middle">desigual por marca</text>
+
+  <text class="cap" x="60" y="668">SEG Instalações · Integrador certificado · Ilhéus, Itabuna e região</text>
+</svg>

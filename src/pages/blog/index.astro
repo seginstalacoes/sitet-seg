@@ -1,23 +1,221 @@
 ---
-import Base from '../../layouts/Base.astro';
-import CtaBand from '../../components/CtaBand.astro';
-const emBreve = [
-  'Quanto custa automatizar uma casa? Guia realista de investimento',
-  'Automação para casa de praia: gerencie sua segunda residência à distância',
-  'Portaria remota em condomínios: quanto custa e quanto economiza',
-  'Automação em obra nova: o que definir antes de fechar o gesso',
-  'O que é integração de sistemas (e por que seus equipamentos deviam conversar)'
+// src/pages/blog/index.astro
+// Índice do blog. Usa import.meta.glob (funciona em Astro 3, 4 e 5) — sem content collections,
+// sem config extra. Basta jogar um .md novo nesta pasta que ele aparece aqui sozinho.
+
+const modules = import.meta.glob("./*.md", { eager: true });
+
+const posts = Object.values(modules)
+  .map((m) => ({ ...m.frontmatter, url: m.url }))
+  .filter((p) => !p.draft)
+  .sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+
+const blocos = [
+  { id: 1, nome: "Fundamento", desc: "O que é, como decidir a arquitetura e quem fala com quem." },
+  { id: 2, nome: "Infraestrutura", desc: "O que precisa estar pronto antes de qualquer app." },
+  { id: 3, nome: "Subsistemas", desc: "Luz, som, imagem e acesso — cada um no seu lugar." },
+  { id: 4, nome: "Decisão", desc: "Quanto custa, o que dá errado e como escolher quem faz." },
 ];
+
+const featured = posts[0];
+const rest = posts.slice(1);
+
+const site = "https://seginstalacoes.com.br";
+const fmt = (d) =>
+  new Date(d).toLocaleDateString("pt-BR", { day: "2-digit", month: "short", year: "numeric" });
 ---
-<Base title="Blog SEG — Automação, Segurança e Tecnologia | SEG Instalações"
-  description="Conteúdo sobre automação residencial, segurança eletrônica, redes e tecnologia para condomínios e empresas no sul da Bahia.">
-  <section class="page-hero"><div class="wrap"><span class="eyebrow">Blog</span><h1>Conteúdo SEG</h1></div></section>
-  <section class="section"><div class="wrap" style="max-width:780px">
-    <p class="lead">Os primeiros artigos estão em produção. Por aqui, em breve:</p>
-    <ul class="zebra" style="margin-top:22px">
-      {emBreve.map(t => (<li>{t}</li>))}
-    </ul>
-  </div></section>
-  <CtaBand titulo="Enquanto isso, fale com a gente" texto="Sua dúvida pode virar o próximo artigo — e a sua solução não precisa esperar." />
-</Base>
-<style>.page-hero { background: var(--navy); color: #fff; padding: 56px 0; } .page-hero h1 { color: #fff; }</style>
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | SEG Instalações — automação, segurança e infraestrutura</title>
+    <meta
+      name="description"
+      content="Conteúdo técnico sobre automação residencial, CFTV, controle de acesso, redes e som ambiente — escrito por quem instala em Ilhéus, Itabuna e região."
+    />
+    <link rel="canonical" href={`${site}/blog`} />
+    <meta property="og:title" content="Blog | SEG Instalações" />
+    <meta
+      property="og:description"
+      content="Automação, segurança e infraestrutura explicadas por quem instala."
+    />
+    <meta property="og:url" content={`${site}/blog`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- [INTEGRAÇÃO] mesmo header mínimo do BlogPost.astro -->
+    <header class="topbar">
+      <a class="brand" href="/">SEG<span>.</span></a>
+      <nav>
+        <a href="/servicos">Serviços</a>
+        <a href="/projetos">Projetos</a>
+        <a href="/blog" aria-current="page">Blog</a>
+        <a class="cta" href="/contato">Solicitar orçamento</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">Blog</p>
+        <h1>Automação, segurança e infraestrutura<br />explicadas por quem instala.</h1>
+        <p class="lede">
+          Sem jargão de catálogo e sem promessa de casa do futuro. O que a gente aprendeu em mais de
+          600 projetos entregues no sul da Bahia — na ordem em que faz sentido aprender.
+        </p>
+      </section>
+
+      {featured && (
+        <a class="featured" href={featured.url}>
+          <div class="featured-img">
+            <img src={featured.image} alt={featured.imageAlt} loading="lazy" decoding="async" />
+          </div>
+          <div class="featured-body">
+            <p class="eyebrow">Comece por aqui · {featured.category}</p>
+            <h2>{featured.title}</h2>
+            <p>{featured.description}</p>
+            <span class="meta">
+              {fmt(featured.pubDate)} · {featured.readingTime} min de leitura
+            </span>
+          </div>
+        </a>
+      )}
+
+      {blocos.map((bloco) => {
+        const doBloco = rest.filter((p) => p.bloco === bloco.id);
+        if (!doBloco.length) return null;
+        return (
+          <section class="bloco">
+            <div class="bloco-head">
+              <span class="bloco-num">{String(bloco.id).padStart(2, "0")}</span>
+              <div>
+                <h2>{bloco.nome}</h2>
+                <p>{bloco.desc}</p>
+              </div>
+            </div>
+            <div class="grid">
+              {doBloco.map((p) => (
+                <a class="card" href={p.url}>
+                  <div class="card-img">
+                    <img src={p.image} alt={p.imageAlt} loading="lazy" decoding="async" />
+                  </div>
+                  <div class="card-body">
+                    <p class="eyebrow">{p.category}</p>
+                    <h3>{p.title}</h3>
+                    <p class="card-desc">{p.description}</p>
+                    <span class="meta">{fmt(p.pubDate)} · {p.readingTime} min</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      {posts.length === 0 && (
+        <p class="empty">Nenhuma matéria publicada ainda. A primeira sai em breve.</p>
+      )}
+    </main>
+
+    <footer class="foot">
+      <p>SEG Instalações · Tecnologia · Segurança · Infraestrutura</p>
+      <p class="muted">Tudo conectado. Tudo sob controle.</p>
+    </footer>
+
+    <style>
+      :root {
+        --seg-bg: #070d18;
+        --seg-surface: #0c1526;
+        --seg-line: #1b2942;
+        --seg-orange: #e85a1a;
+        --seg-text: #e8edf5;
+        --seg-muted: #8da0bc;
+        --seg-dim: #6f82a0;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; background: var(--seg-bg); color: var(--seg-text);
+        font-family: "Poppins", system-ui, Arial, sans-serif; -webkit-font-smoothing: antialiased;
+      }
+      :focus-visible { outline: 2px solid var(--seg-orange); outline-offset: 3px; border-radius: 4px; }
+
+      .topbar {
+        display: flex; align-items: center; justify-content: space-between; gap: 24px;
+        padding: 20px clamp(20px, 5vw, 64px); border-bottom: 1px solid var(--seg-line);
+        position: sticky; top: 0; z-index: 10;
+        background: rgba(7, 13, 24, 0.86); backdrop-filter: blur(10px);
+      }
+      .brand { font-weight: 700; letter-spacing: 0.08em; text-decoration: none; font-size: 22px; color: var(--seg-text); }
+      .brand span { color: var(--seg-orange); }
+      .topbar nav { display: flex; align-items: center; gap: 28px; }
+      .topbar nav a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--seg-muted); }
+      .topbar nav a:hover, .topbar nav a[aria-current] { color: var(--seg-text); }
+      .cta {
+        background: var(--seg-orange); color: #070d18 !important; padding: 10px 18px;
+        border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 14px;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+      .cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+      @media (max-width: 720px) { .topbar nav a:not(.cta) { display: none; } }
+
+      main { max-width: 1160px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 48px); }
+
+      .eyebrow {
+        margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+        text-transform: uppercase; color: var(--seg-orange);
+      }
+      .intro h1 { margin: 0 0 20px; font-size: clamp(32px, 5.4vw, 54px); line-height: 1.1; letter-spacing: -0.025em; }
+      .intro .lede { margin: 0; max-width: 620px; font-size: 17px; line-height: 1.65; color: var(--seg-muted); }
+
+      .featured {
+        display: grid; grid-template-columns: 1.05fr 1fr; gap: 0;
+        margin: 56px 0 72px; border: 1px solid var(--seg-line); border-radius: 18px;
+        overflow: hidden; text-decoration: none; color: inherit;
+        background: linear-gradient(140deg, #0d1a33 0%, var(--seg-surface) 75%);
+        transition: border-color 0.25s ease, transform 0.25s ease;
+      }
+      .featured:hover { border-color: var(--seg-orange); transform: translateY(-2px); }
+      .featured-img { background: var(--seg-bg); }
+      .featured-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .featured-body { padding: 40px; align-self: center; }
+      .featured-body h2 { margin: 0 0 14px; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.25; letter-spacing: -0.015em; }
+      .featured-body p { margin: 0 0 18px; color: var(--seg-muted); font-size: 15px; line-height: 1.6; }
+      @media (max-width: 860px) { .featured { grid-template-columns: 1fr; } .featured-body { padding: 28px; } }
+
+      .bloco { margin-bottom: 72px; }
+      .bloco-head { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--seg-line); }
+      .bloco-num { font-size: 34px; font-weight: 700; color: var(--seg-line); line-height: 1; }
+      .bloco-head h2 { margin: 0 0 6px; font-size: 22px; letter-spacing: -0.01em; }
+      .bloco-head p { margin: 0; font-size: 14px; color: var(--seg-dim); }
+
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; }
+      .card {
+        display: flex; flex-direction: column; text-decoration: none; color: inherit;
+        background: var(--seg-surface); border: 1px solid var(--seg-line); border-radius: 14px;
+        overflow: hidden; transition: border-color 0.25s ease, transform 0.25s ease;
+      }
+      .card:hover { border-color: var(--seg-orange); transform: translateY(-3px); }
+      .card-img { aspect-ratio: 16 / 9; background: var(--seg-bg); }
+      .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .card-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+      .card-body h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.35; }
+      .card-desc { margin: 0 0 18px; font-size: 14px; line-height: 1.6; color: var(--seg-muted); flex: 1; }
+
+      .meta { font-size: 12px; color: var(--seg-dim); }
+      .empty { color: var(--seg-muted); }
+
+      .foot { border-top: 1px solid var(--seg-line); padding: 40px clamp(20px, 5vw, 64px); font-size: 13px; color: var(--seg-dim); }
+      .foot p { margin: 0 0 6px; }
+      .foot .muted { color: var(--seg-line); }
+
+      @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    </style>
+  </body>
+</html>

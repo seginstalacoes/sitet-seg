@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="t d">
+  <title id="t">Topologia de automação cabeada comparada à topologia sem fio</title>
+  <desc id="d">À esquerda, arquitetura cabeada: um quadro de automação central conecta-se por cabo a cada carga. À direita, arquitetura sem fio: cada módulo embutido na caixa 4x2 comunica-se por rádio com um gateway ligado ao roteador.</desc>
+
+  <defs>
+    <style>
+      .bg{fill:#070D18}
+      .panel{fill:#0C1526;stroke:#1B2942;stroke-width:1.5;rx:14}
+      .ttl{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:26px;fill:#E8EDF5;letter-spacing:.06em}
+      .sub{font-family:Poppins,Arial,sans-serif;font-weight:500;font-size:14px;fill:#8DA0BC}
+      .lbl{font-family:Poppins,Arial,sans-serif;font-weight:600;font-size:13px;fill:#C7D4E6}
+      .lblsm{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:11px;fill:#C7D4E6;letter-spacing:.06em}
+      .tag{font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:11px;fill:#070D18;letter-spacing:.1em}
+      .box{fill:#122038;stroke:#2A3D5C;stroke-width:1.5}
+      .wire{fill:none;stroke:#E85A1A;stroke-width:2.5;stroke-linecap:round}
+      .rf{fill:none;stroke:#4FA3E3;stroke-width:2;stroke-linecap:round;opacity:.85}
+      .node{fill:#0F1B30;stroke:#3A5478;stroke-width:1.5}
+      .accent{fill:#E85A1A}
+      .blue{fill:#4FA3E3}
+      .divider{stroke:#1B2942;stroke-width:1.5;stroke-dasharray:6 8}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="660"/>
+
+  <!-- divider -->
+  <line class="divider" x1="600" y1="60" x2="600" y2="600"/>
+
+  <!-- ============ LEFT: CABEADA ============ -->
+  <rect class="accent" x="60" y="44" width="122" height="24" rx="12"/>
+  <text class="tag" x="78" y="61">CABEADA</text>
+  <text class="ttl" x="60" y="112">Inteligência centralizada</text>
+  <text class="sub" x="60" y="140">Cada carga tem seu próprio cabo até o quadro.</text>
+  <text class="sub" x="60" y="162">O módulo decide. O interruptor só pede.</text>
+
+  <!-- central rack -->
+  <rect class="box" x="70" y="290" width="120" height="200" rx="10"/>
+  <text class="lblsm" x="130" y="316" text-anchor="middle">QUADRO</text>
+  <text class="lblsm" x="130" y="334" text-anchor="middle">DE AUTOMAÇÃO</text>
+  <g fill="#1B2942">
+    <rect x="86" y="352" width="88" height="16" rx="3"/>
+    <rect x="86" y="376" width="88" height="16" rx="3"/>
+    <rect x="86" y="400" width="88" height="16" rx="3"/>
+    <rect x="86" y="424" width="88" height="16" rx="3"/>
+    <rect x="86" y="448" width="88" height="16" rx="3"/>
+  </g>
+  <g class="accent">
+    <circle cx="96" cy="360" r="3"/><circle cx="96" cy="384" r="3"/><circle cx="96" cy="408" r="3"/><circle cx="96" cy="432" r="3"/><circle cx="96" cy="456" r="3"/>
+  </g>
+
+  <!-- wires fanning out -->
+  <path class="wire" d="M190 340 C 260 340, 260 200, 340 200"/>
+  <path class="wire" d="M190 366 C 270 366, 270 280, 340 280"/>
+  <path class="wire" d="M190 392 C 280 392, 280 360, 340 360"/>
+  <path class="wire" d="M190 418 C 270 418, 270 440, 340 440"/>
+  <path class="wire" d="M190 444 C 260 444, 260 520, 340 520"/>
+
+  <!-- loads -->
+  <g>
+    <rect class="node" x="340" y="176" width="180" height="48" rx="8"/>
+    <circle class="accent" cx="364" cy="200" r="6"/>
+    <text class="lbl" x="384" y="205">Iluminação sala</text>
+  </g>
+  <g>
+    <rect class="node" x="340" y="256" width="180" height="48" rx="8"/>
+    <circle class="accent" cx="364" cy="280" r="6"/>
+    <text class="lbl" x="384" y="285">Persianas</text>
+  </g>
+  <g>
+    <rect class="node" x="340" y="336" width="180" height="48" rx="8"/>
+    <circle class="accent" cx="364" cy="360" r="6"/>
+    <text class="lbl" x="384" y="365">Ar-condicionado</text>
+  </g>
+  <g>
+    <rect class="node" x="340" y="416" width="180" height="48" rx="8"/>
+    <circle class="accent" cx="364" cy="440" r="6"/>
+    <text class="lbl" x="384" y="445">Irrigação / jardim</text>
+  </g>
+  <g>
+    <rect class="node" x="340" y="496" width="180" height="48" rx="8"/>
+    <circle class="accent" cx="364" cy="520" r="6"/>
+    <text class="lbl" x="384" y="525">Portão e fachada</text>
+  </g>
+
+  <text class="sub" x="60" y="592">Forte: previsibilidade.</text>
+  <text class="sub" x="60" y="614">Fraco: exige infraestrutura na obra.</text>
+
+  <!-- ============ RIGHT: SEM FIO ============ -->
+  <rect x="660" y="44" width="128" height="24" rx="12" fill="#4FA3E3"/>
+  <text class="tag" x="678" y="61">SEM FIO</text>
+  <text class="ttl" x="660" y="112">Inteligência distribuída</text>
+  <text class="sub" x="660" y="140">O módulo mora atrás do interruptor.</text>
+  <text class="sub" x="660" y="162">A rede de rádio é o barramento.</text>
+
+  <!-- gateway -->
+  <rect class="box" x="670" y="360" width="150" height="90" rx="10"/>
+  <text class="lblsm" x="745" y="392" text-anchor="middle">ROTEADOR</text>
+  <text class="lblsm" x="745" y="412" text-anchor="middle">+ GATEWAY</text>
+  <g fill="#4FA3E3"><circle cx="700" cy="432" r="3"/><circle cx="712" cy="432" r="3"/><circle cx="724" cy="432" r="3"/></g>
+
+  <!-- rf arcs -->
+  <g class="rf">
+    <path d="M832 386 a 40 40 0 0 1 0 38"/>
+    <path d="M850 370 a 60 60 0 0 1 0 70"/>
+    <path d="M868 354 a 80 80 0 0 1 0 102"/>
+  </g>
+
+  <!-- wireless nodes -->
+  <g>
+    <rect class="node" x="940" y="176" width="200" height="48" rx="8"/>
+    <circle class="blue" cx="964" cy="200" r="6"/>
+    <text class="lbl" x="984" y="205">Módulo 4x2 — sala</text>
+  </g>
+  <g>
+    <rect class="node" x="940" y="256" width="200" height="48" rx="8"/>
+    <circle class="blue" cx="964" cy="280" r="6"/>
+    <text class="lbl" x="984" y="285">Módulo 4x2 — quarto</text>
+  </g>
+  <g>
+    <rect class="node" x="940" y="336" width="200" height="48" rx="8"/>
+    <circle class="blue" cx="964" cy="360" r="6"/>
+    <text class="lbl" x="984" y="365">Tomada inteligente</text>
+  </g>
+  <g>
+    <rect class="node" x="940" y="416" width="200" height="48" rx="8"/>
+    <circle class="blue" cx="964" cy="440" r="6"/>
+    <text class="lbl" x="984" y="445">Sensor de presença</text>
+  </g>
+  <g>
+    <rect class="node" x="940" y="496" width="200" height="48" rx="8"/>
+    <circle class="blue" cx="964" cy="520" r="6"/>
+    <text class="lbl" x="984" y="525">Fechadura eletrônica</text>
+  </g>
+
+  <!-- mesh links between nodes (dashed) -->
+  <g stroke="#4FA3E3" stroke-width="1.2" opacity=".45" stroke-dasharray="4 6" fill="none">
+    <path d="M880 200 L 940 200"/>
+    <path d="M880 280 L 940 280"/>
+    <path d="M880 360 L 940 360"/>
+    <path d="M880 440 L 940 440"/>
+    <path d="M880 520 L 940 520"/>
+    <path d="M1040 224 L 1040 256"/>
+    <path d="M1040 304 L 1040 336"/>
+    <path d="M1040 384 L 1040 416"/>
+    <path d="M1040 464 L 1040 496"/>
+  </g>
+
+  <text class="sub" x="660" y="592">Forte: entra em casa pronta.</text>
+  <text class="sub" x="660" y="614">Fraco: depende da qualidade da rede.</text>
+</svg>
